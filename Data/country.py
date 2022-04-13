@@ -43,10 +43,10 @@ o2.close()
 #create AnnualCountryStats.txt
 o1 = open('AnnualCountryStats.txt', 'w')
 attributes = 'countryCode\tyear\tpctUsingInternet\tGDPperCap\tpopulation\tfertRate\tlifeExpectMale\tlifeExpectFem\n'
-o1.write(attributes)
+# o1.write(attributes)
 countryStats = {}
 for line in L:
-    myLine = line.split('\t')[:-1]
+    myLine = line[:-1].split('\t')
     code = myLine[1]
     series = myLine[3]
     if code not in countryStats:
