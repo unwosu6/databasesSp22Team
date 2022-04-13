@@ -27,33 +27,43 @@ while True:
 
 # create dict to translate country names to codes
 countryDict = {}
+countryToCode = {}
 for line in L:
     name = line.split('\t')[0]
     code = line.split('\t')[1]
     if code not in countryDict:
         countryDict[code] = []
         countryDict[code].append(name)
-
+    if name not in countryToCode:
+        countryToCode[name] = code
 # create Country.txt
 i2 = open('continent.txt', 'r')
 L2 = i2.readlines()
 i2.close()
-countryToCode = {}
 for line in L2:
     myLine = line[:-1].split('\t')
     country = myLine[1]
     code = myLine[2]
-    countryToCode[country] = code
-    continent = myLine[6]
-    countryDict[code].append(continent)
-i3 = open('vaction-days.csv','r')
+    if code not in countryDict:
+        print('no info for country: ' + country)
+    else:
+        countryToCode[country] = code
+        continent = myLine[6]
+        countryDict[code].append(continent)
+
+i3 = open('vacation-days.csv','r')
 L3 = i3.readlines()
 i3.close()
-for line in L3:
+for line in L3[1:]:
     myLine = line[:-1].split(',')
     country = myLine[0]
-    code = countryToCode[country]
-    countryDict[code].extend(myLine[1:])
+    if country not in countryToCode:
+        print("cannot find country: " + country + " look in continent?")
+    else:
+        code = countryToCode[country]
+        countryDict[code].extend(myLine[1:])
+print(countryToCode)
+print(countryDict.keys())
 o2 = open('Country.txt', 'w')
 # o2.write('countryCode\tcountryName\tcontinent\tpaidVacDays\tpaidHolidy\tpaidLeaveTotal\n')
 for code, countryList in countryDict.items():
@@ -67,7 +77,7 @@ o2.close()
 #create AnnualCountryStats.txt
 o1 = open('AnnualCountryStats.txt', 'w')
 attributes = 'countryCode\tyear\tpctUsingInternet\tGDPperCap\tpopulation\tfertRate\tlifeExpectMale\tlifeExpectFem\n'
-# o1.write(attributes)
+o1.write(attributes)
 countryStats = {}
 for line in L:
     myLine = line[:-1].split('\t')

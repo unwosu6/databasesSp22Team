@@ -1,3 +1,4 @@
+countryCode	year	pctUsingInternet	GDPperCap	population	fertRate	lifeExpectMale	lifeExpectFem
 AFG	1990	0	..	12249114	7.466	48.89	50.874
 AFG	1991	..	..	12993657	7.479	49.638	51.667
 AFG	1992	..	..	13981231	7.502	50.323	52.393

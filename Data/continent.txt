@@ -24,7 +24,7 @@
 24	Benin	BEN	204	Western Africa	Sub-Saharan Africa	Africa
 25	Bermuda	BMU	060	Northern America		North America
 26	Bhutan	BTN	064	Southern Asia		Asia
-27	Bolivia (Plurinational State of)	BOL	068	South America	Latin America and the Caribbean	South America
+27	Bolivia	BOL	068	South America	Latin America and the Caribbean	South America
 28	Bonaire, Sint Eustatius and Saba	BES	535	Caribbean	Latin America and the Caribbean	North America
 29	Bosnia and Herzegovina	BIH	070	Southern Europe		Europe
 30	Botswana	BWA	072	Southern Africa	Sub-Saharan Africa	Africa
