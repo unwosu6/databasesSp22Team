@@ -1,6 +1,5 @@
 i1 = open('annualcountrylifesatis.txt', 'r')
 L = i1.readlines()
-
 i1.close()
 
 years = L[0].split('\t')
@@ -31,13 +30,38 @@ countryDict = {}
 for line in L:
     name = line.split('\t')[0]
     code = line.split('\t')[1]
-    countryDict[code] = name
+    if code not in countryDict:
+        countryDict[code] = []
+        countryDict[code].append(name)
 
 # create Country.txt
+i2 = open('continent.txt', 'r')
+L2 = i2.readlines()
+i2.close()
+countryToCode = {}
+for line in L2:
+    myLine = line[:-1].split('\t')
+    country = myLine[1]
+    code = myLine[2]
+    countryToCode[country] = code
+    continent = myLine[6]
+    countryDict[code].append(continent)
+i3 = open('vaction-days.csv','r')
+L3 = i3.readlines()
+i3.close()
+for line in L3:
+    myLine = line[:-1].split(',')
+    country = myLine[0]
+    code = countryToCode[country]
+    countryDict[code].extend(myLine[1:])
 o2 = open('Country.txt', 'w')
-o2.write('countryCode countryName\n')
-for code in countryDict:
-    o2.write(code + '\t' + countryDict[code] + '\n')
+# o2.write('countryCode\tcountryName\tcontinent\tpaidVacDays\tpaidHolidy\tpaidLeaveTotal\n')
+for code, countryList in countryDict.items():
+    myTuple = code + '\t'
+    for val in countryList:
+        myTuple += str(val) + '\t'
+    myTuple = myTuple[:-1] + '\n'
+    o2.write(myTuple)
 o2.close()
 
 #create AnnualCountryStats.txt
