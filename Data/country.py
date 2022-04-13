@@ -62,10 +62,8 @@ for line in L3[1:]:
     else:
         code = countryToCode[country]
         countryDict[code].extend(myLine[1:])
-print(countryToCode)
-print(countryDict.keys())
 o2 = open('Country.txt', 'w')
-# o2.write('countryCode\tcountryName\tcontinent\tpaidVacDays\tpaidHolidy\tpaidLeaveTotal\n')
+o2.write('countryCode\tcountryName\tcontinent\tpaidVacDays\tpaidHolidy\tpaidLeaveTotal\n')
 for code, countryList in countryDict.items():
     myTuple = code + '\t'
     for val in countryList:
@@ -101,3 +99,4 @@ for code, yearDict in countryStats.items():
             # print(myTuple)
             o1.write(myTuple)
 o1.close()
+print(countryToCode)

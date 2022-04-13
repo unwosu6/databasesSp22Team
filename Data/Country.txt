@@ -1,3 +1,4 @@
+countryCode	countryName	continent	paidVacDays	paidHolidy	paidLeaveTotal
 AFG	Afghanistan	Asia	20	15	35
 ALB	Albania	Europe	20	12	32
 DZA	Algeria	Africa	30	11	41
