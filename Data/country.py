@@ -99,4 +99,8 @@ for code, yearDict in countryStats.items():
             # print(myTuple)
             o1.write(myTuple)
 o1.close()
-print(countryToCode)
+
+o4 = open('countryToCode.txt', 'w')
+for country, code in countryToCode.items():
+    o4.write(country + '\t' + code)
+o4.close()
