@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS WorksIn;
 DROP TABLE IF EXISTS AnnualCountryStats;
 DROP TABLE IF EXISTS AnnualDemoStats;
 DROP TABLE IF EXISTS Country;
@@ -55,6 +56,18 @@ CREATE TABLE AnnualDemoStats(
 	CHECK (literacyRate >= 0 AND literacyRate <= 100)
 );
 
+CREATE TABLE WorksIn(
+	sectorID VARCHAR(200), 
+	countryCode VARCHAR(3), 
+	year INT, 
+	sex VARCHAR(10), 
+	monthlyEarnings FLOAT NOT NULL,
+	PRIMARY KEY (sectorID, countryCode, year, sex),
+	FOREIGN KEY (year) REFERENCES Year(year) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
+	FOREIGN KEY (sex) REFERENCES Demographic(sex)
+);
+
 LOAD DATA LOCAL INFILE 'Year-small.txt'
 INTO TABLE Year
 FIELDS TERMINATED BY '\t'
@@ -105,3 +118,9 @@ pctAdvancedEdu = NULLIF(@vpctAdvancedEdu,'NA'),
 pctBasicEdu = NULLIF(@vpctBasicEdu,'NA'),
 lifeExpect = NULLIF(@vlifeExpect,'NA'),
 literacyRate = NULLIF(@vliteracyRate, 'NA');
+
+LOAD DATA LOCAL INFILE 'WorksIn-small.txt'
+INTO TABLE WorksIn
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
