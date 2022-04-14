@@ -16,4 +16,4 @@ Downloaded from https://ilostat.ilo.org/topics/wages/, "Mean nominal monthly ear
 Manually deleted first 5 rows (was just notes), and columns titles “Notes” “2017 PPP $” “Local currency” “Source” in excel
 With R (sp22_db_cleanup.R):
 Renamed columns
-Replaced country name with country code
+Added country code (Downloaded from https://gist.github.com/tadast/8827699)
