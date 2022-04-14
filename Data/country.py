@@ -26,8 +26,17 @@ while True:
     attr.append(name)
 
 # create dict to translate country names to codes
-countryDict = {}
+i4 = open('countryAndCodes.txt','r')
+L4 = i4.readlines()
+i4.close()
 countryToCode = {}
+for line in L4:
+    myLine = line[:-1].split('\t')
+    country = myLine[0]
+    code = myLine[2]
+    countryToCode[country] = code
+
+countryDict = {}
 for line in L:
     name = line.split('\t')[0]
     code = line.split('\t')[1]
@@ -35,7 +44,6 @@ for line in L:
         countryDict[code] = []
         countryDict[code].append(name)
     if name not in countryToCode:
-        print(name)
         countryToCode[name] = code
 countryToCode['Russia'] = 'RUS'
 # create Country.txt
@@ -46,9 +54,9 @@ for line in L2:
     myLine = line[:-1].split('\t')
     country = myLine[1]
     code = myLine[2]
-    if code not in countryDict:
-        print('no info for country: ' + country)
-    else:
+    #if code not in countryDict:
+        # print('no info for country: ' + country)
+    if code in countryDict:
         countryToCode[country] = code
         continent = myLine[6]
         countryDict[code].append(continent)
@@ -63,7 +71,8 @@ for line in L3[1:]:
         print("cannot find country: " + country + " look in continent?")
     else:
         code = countryToCode[country]
-        countryDict[code].extend(myLine[1:])
+        if code in countryDict:
+            countryDict[code].extend(myLine[1:])
 o2 = open('Country.txt', 'w')
 o2.write('countryCode\tcountryName\tcontinent\tpaidVacDays\tpaidHolidy\tpaidLeaveTotal\n')
 for code, countryList in countryDict.items():

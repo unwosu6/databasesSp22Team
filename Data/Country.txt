@@ -32,7 +32,7 @@ BRN	Brunei Darussalam	Asia	7	11	18
 BGR	Bulgaria	Europe	20	12	32
 BFA	Burkina Faso	Africa	30	15	45
 BDI	Burundi	Africa	17	13	30
-CPV	Cabo Verde	Africa
+CPV	Cabo Verde	Africa	22	0	22
 KHM	Cambodia	Asia	18	27	45
 CMR	Cameroon	Africa	18		
 CAN	Canada	North America	10	6	16
@@ -44,10 +44,10 @@ CHL	Chile	South America	15	15	30
 CHN	China	Asia	5	11	16
 COL	Colombia	South America	15	18	33
 COM	Comoros	Africa	25		
-COD	"Congo, Dem. Rep."	Africa
+COD	"Congo, Dem. Rep."	Africa	12		
 COG	"Congo, Rep."	Africa	26		
 CRI	Costa Rica	North America	10	9	19
-CIV	Cote d'Ivoire	Africa
+CIV	Cote d'Ivoire	Africa	20	14	34
 HRV	Croatia	Europe	20	13	33
 CUB	Cuba	North America	22	9	33
 CUW	Curacao	North America
@@ -65,7 +65,7 @@ SLV	El Salvador	North America	15	11	26
 GNQ	Equatorial Guinea	Africa	30		
 ERI	Eritrea	Africa	12		
 EST	Estonia	Europe	28	11	39
-SWZ	Eswatini	Africa
+SWZ	Eswatini	Africa	10		
 ETH	Ethiopia	Africa	12	13	25
 EMU	Euro area
 ECS	Europe & Central Asia
@@ -94,7 +94,7 @@ HTI	Haiti	North America	11	16	27
 HPC	Heavily indebted poor countries (HIPC)
 HIC	High income
 HND	Honduras	North America	8	11	19
-HKG	"Hong Kong SAR, China"	Asia
+HKG	"Hong Kong SAR, China"	Asia	7	17	24
 HUN	Hungary	Europe	20	13	33
 ISL	Iceland	Europe	24	14	38
 IND	India	Asia	12	15	27
@@ -112,11 +112,11 @@ KAZ	Kazakhstan	Asia	24	16	40
 KEN	Kenya	Africa	21	10	28
 KIR	Kiribati	Oceania	0		
 PRK	"Korea, Dem. People’s Rep."	Asia
-KOR	"Korea, Rep."	Asia
+KOR	"Korea, Rep."	Asia	15	15	30
 XKX	Kosovo	20	12	32
 KWT	Kuwait	Asia	30	13	43
 KGZ	Kyrgyz Republic	Asia	20		
-LAO	Lao PDR	Asia
+LAO	Lao PDR	Asia	15		
 LCN	Latin America & Caribbean
 LAC	Latin America & Caribbean (excluding high income)
 LVA	Latvia	Europe	20	12	32
@@ -143,7 +143,7 @@ MHL	Marshall Islands	Oceania	0
 MRT	Mauritania	Africa	15	7	22
 MUS	Mauritius	Africa	22	16	38
 MEX	Mexico	North America	6	7	13
-FSM	"Micronesia, Fed. Sts."	Oceania
+FSM	"Micronesia, Fed. Sts."	Oceania	0		
 MEA	Middle East & North Africa
 MNA	Middle East & North Africa (excluding high income)
 MIC	Middle income
@@ -211,11 +211,11 @@ SDN	Sudan	Africa	20
 SUR	Suriname	South America	12	18	30
 SWE	Sweden	Europe	25	9	34
 CHE	Switzerland	Europe	20	7	27
-SYR	Syrian Arab Republic	Asia
+SYR	Syrian Arab Republic	Asia	24	13	37
 TJK	Tajikistan	Asia
 TZA	Tanzania	Africa	20	17	37
 THA	Thailand	Asia	6	13	19
-TLS	Timor-Leste	Asia
+TLS	Timor-Leste	Asia	12		
 TGO	Togo	Africa	22	0	22
 TON	Tonga	Oceania	0		
 TTO	Trinidad and Tobago	North America	10	14	24
@@ -233,10 +233,10 @@ UMC	Upper middle income
 URY	Uruguay	South America	20	5	25
 UZB	Uzbekistan	Asia	15		
 VUT	Vanuatu	Oceania	15	0	15
-VEN	"Venezuela, RB"	South America
+VEN	"Venezuela, RB"	South America	15		
 VNM	Vietnam	Asia	12	11	23
 VIR	Virgin Islands (U.S.)	North America
-PSE	West Bank and Gaza	Asia
+PSE	West Bank and Gaza	Asia	21	12	33
 WLD	World
 YEM	"Yemen, Rep."	Asia	22	15	37
 ZMB	Zambia	Africa	20	11	31
