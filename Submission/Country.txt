@@ -1,0 +1,244 @@
+countryCode	countryName	continent	paidVacDays	paidHolidy	paidLeaveTotal
+AFG	Afghanistan	Asia	20	15	35
+ALB	Albania	Europe	20	12	32
+DZA	Algeria	Africa	30	11	41
+ASM	American Samoa	Oceania
+AND	Andorra	Europe	31	14	45
+AGO	Angola	Africa	22	11	33
+ATG	Antigua and Barbuda	North America	12	11	23
+ARB	Arab World
+ARG	Argentina	South America	10	19	29
+ARM	Armenia	Asia	20	12	36
+ABW	Aruba	North America
+AUS	Australia	Oceania	20	10	30
+AUT	Austria	Europe	25	13	38
+AZE	Azerbaijan	Asia	21	19	40
+BHS	"Bahamas, The"	North America	10	10	20
+BHR	Bahrain	Asia	30	14	44
+BGD	Bangladesh	Asia	10	11	21
+BRB	Barbados	North America	15		
+BLR	Belarus	Europe	24	9	33
+BEL	Belgium	Europe	20	10	30
+BLZ	Belize	North America	14	13	27
+BEN	Benin	Africa	24	13	37
+BMU	Bermuda	North America
+BTN	Bhutan	Asia	9		
+BOL	Bolivia	South America	15	11	26
+BIH	Bosnia and Herzegovina	Europe	20	9	29
+BWA	Botswana	Africa	15	14	29
+BRA	Brazil	South America	10	12	22
+VGB	British Virgin Islands	North America
+BRN	Brunei Darussalam	Asia	7	11	18
+BGR	Bulgaria	Europe	20	12	32
+BFA	Burkina Faso	Africa	30	15	45
+BDI	Burundi	Africa	17	13	30
+CPV	Cabo Verde	Africa	22	0	22
+KHM	Cambodia	Asia	18	27	45
+CMR	Cameroon	Africa	18		
+CAN	Canada	North America	10	6	16
+CYM	Cayman Islands	North America
+CAF	Central African Republic	Africa	24		
+TCD	Chad	Africa	24	3	27
+CHI	Channel Islands
+CHL	Chile	South America	15	15	30
+CHN	China	Asia	5	11	16
+COL	Colombia	South America	15	18	33
+COM	Comoros	Africa	25		
+COD	"Congo, Dem. Rep."	Africa	12		
+COG	"Congo, Rep."	Africa	26		
+CRI	Costa Rica	North America	10	9	19
+CIV	Cote d'Ivoire	Africa	20	14	34
+HRV	Croatia	Europe	20	13	33
+CUB	Cuba	North America	22	9	33
+CUW	Curacao	North America
+CYP	Cyprus	Asia	20	14	34
+CZE	Czech Republic	Europe	20	13	33
+DNK	Denmark	Europe	25	11	36
+DJI	Djibouti	Africa	25	10	35
+DMA	Dominica	North America	10	12	22
+DOM	Dominican Republic	North America	10	13	23
+EAS	East Asia & Pacific
+EAP	East Asia & Pacific (excluding high income)
+ECU	Ecuador	South America	11	12	23
+EGY	"Egypt, Arab Rep."	Africa	21	13	34
+SLV	El Salvador	North America	15	11	26
+GNQ	Equatorial Guinea	Africa	30		
+ERI	Eritrea	Africa	12		
+EST	Estonia	Europe	28	11	39
+SWZ	Eswatini	Africa	10		
+ETH	Ethiopia	Africa	12	13	25
+EMU	Euro area
+ECS	Europe & Central Asia
+ECA	Europe & Central Asia (excluding high income)
+EUU	European Union	20	0	20
+FRO	Faroe Islands	Europe
+FJI	Fiji	Oceania	10	12	22
+FIN	Finland	Europe	25	11	36
+FRA	France	Europe	25	11	36
+PYF	French Polynesia	Oceania
+GAB	Gabon	Africa	20	14	34
+GMB	"Gambia, The"	Africa	21		
+GEO	Georgia	Asia	24	15	39
+DEU	Germany	Europe	20	10	30
+GHA	Ghana	Africa	15	13	28
+GIB	Gibraltar	Europe
+GRC	Greece	Europe	20	12	32
+GRL	Greenland	North America
+GRD	Grenada	North America	10	13	23
+GUM	Guam	Oceania
+GTM	Guatemala	North America	15	10	25
+GIN	Guinea	Africa	22	11	33
+GNB	Guinea-Bissau	Africa	22		
+GUY	Guyana	South America	12	0	12
+HTI	Haiti	North America	11	16	27
+HPC	Heavily indebted poor countries (HIPC)
+HIC	High income
+HND	Honduras	North America	8	11	19
+HKG	"Hong Kong SAR, China"	Asia	7	17	24
+HUN	Hungary	Europe	20	13	33
+ISL	Iceland	Europe	24	14	38
+IND	India	Asia	12	15	27
+IDN	Indonesia	Asia	12	15	27
+IRN	"Iran, Islamic Rep."	Asia	26	27	53
+IRQ	Iraq	Asia	20		
+IRL	Ireland	Europe	20	10	30
+IMN	Isle of Man	Europe
+ISR	Israel	Asia	12	9	21
+ITA	Italy	Europe	20	12	32
+JAM	Jamaica	North America	10		
+JPN	Japan	Asia	10	16	26
+JOR	Jordan	Asia	14	10	24
+KAZ	Kazakhstan	Asia	24	16	40
+KEN	Kenya	Africa	21	10	28
+KIR	Kiribati	Oceania	0		
+PRK	"Korea, Dem. People’s Rep."	Asia
+KOR	"Korea, Rep."	Asia	15	15	30
+XKX	Kosovo	20	12	32
+KWT	Kuwait	Asia	30	13	43
+KGZ	Kyrgyz Republic	Asia	20		
+LAO	Lao PDR	Asia	15		
+LCN	Latin America & Caribbean
+LAC	Latin America & Caribbean (excluding high income)
+LVA	Latvia	Europe	20	12	32
+LDC	Least developed countries: UN classification
+LBN	Lebanon	Asia	15	22	37
+LSO	Lesotho	Africa	12	10	22
+LBR	Liberia	Africa	10	11	21
+LBY	Libya	Africa	22		
+LIE	Liechtenstein	Europe
+LTU	Lithuania	Europe	20	14	34
+LMY	Low & middle income
+LIC	Low income
+LMC	Lower middle income
+LUX	Luxembourg	Europe	26	11	37
+MAC	"Macao SAR, China"	Asia
+MKD	"Macedonia, FYR"	Europe	20	12	32
+MDG	Madagascar	Africa	22	13	35
+MWI	Malawi	Africa	18		
+MYS	Malaysia	Asia	8	11	19
+MDV	Maldives	Asia	22		
+MLI	Mali	Africa	22		
+MLT	Malta	Europe	27	14	41
+MHL	Marshall Islands	Oceania	0		
+MRT	Mauritania	Africa	15	7	22
+MUS	Mauritius	Africa	22	16	38
+MEX	Mexico	North America	6	7	13
+FSM	"Micronesia, Fed. Sts."	Oceania	0		
+MEA	Middle East & North Africa
+MNA	Middle East & North Africa (excluding high income)
+MIC	Middle income
+MDA	Moldova	Europe	20	0	20
+MCO	Monaco	Europe
+MNG	Mongolia	Asia	15	0	15
+MNE	Montenegro	Europe	21		
+MAR	Morocco	Africa	15	13	25
+MOZ	Mozambique	Africa	10	9	19
+MMR	Myanmar	Asia	10	14	24
+NAM	Namibia	Africa	20		
+NRU	Nauru	Oceania	0		
+NPL	Nepal	Asia	15	13	28
+NLD	Netherlands	Europe	20	8	28
+NCL	New Caledonia	Oceania
+NZL	New Zealand	Oceania	20	11	31
+NIC	Nicaragua	North America	11	9	20
+NER	Niger	Africa	22	12	34
+NGA	Nigeria	Africa	5		
+NAC	North America
+MNP	Northern Mariana Islands	Oceania
+NOR	Norway	Europe	25	10	35
+OED	OECD members
+OMN	Oman	Asia	22	9	31
+PAK	Pakistan	Asia	14	15	29
+PLW	Palau	Oceania	0		
+PAN	Panama	North America	30	10	40
+PNG	Papua New Guinea	Oceania	10	9	19
+PRY	Paraguay	South America	10	12	22
+PER	Peru	South America	30	12	42
+PHL	Philippines	Asia	5	12	17
+POL	Poland	Europe	26	13	33
+PRT	Portugal	Europe	22	9	31
+PRI	Puerto Rico	North America	15	0	15
+QAT	Qatar	Asia	15	10	25
+ROU	Romania	Europe	20	13	34
+RUS	Russian Federation	Europe	20	14	34
+RWA	Rwanda	Africa	15	11	26
+WSM	Samoa	Oceania	10	11	21
+SMR	San Marino	Europe	10		
+STP	Sao Tome and Principe	Africa	25	9	34
+SAU	Saudi Arabia	Asia	21	9	30
+SEN	Senegal	Africa	20	12	32
+SRB	Serbia	Europe	20	11	31
+SYC	Seychelles	Africa	21	13	34
+SLE	Sierra Leone	Africa	18		
+SGP	Singapore	Asia	7	11	18
+SXM	Sint Maarten (Dutch part)	North America
+SVK	Slovak Republic	Europe	25	15	40
+SVN	Slovenia	Europe	20	13	33
+SLB	Solomon Islands	Oceania	15	0	15
+SOM	Somalia	Africa	13	9	22
+ZAF	South Africa	Africa	15	12	27
+SAS	South Asia
+SSD	South Sudan	Africa	20	12	32
+ESP	Spain	Europe	22	11	33
+LKA	Sri Lanka	Asia	20	20	40
+KNA	St. Kitts and Nevis	North America	12		
+LCA	St. Lucia	North America	14	13	27
+MAF	St. Martin (French part)	North America
+VCT	St. Vincent and the Grenadines	North America	16		
+SSF	Sub-Saharan Africa
+SSA	Sub-Saharan Africa (excluding high income)
+SDN	Sudan	Africa	20		
+SUR	Suriname	South America	12	18	30
+SWE	Sweden	Europe	25	9	34
+CHE	Switzerland	Europe	20	7	27
+SYR	Syrian Arab Republic	Asia	24	13	37
+TJK	Tajikistan	Asia
+TZA	Tanzania	Africa	20	17	37
+THA	Thailand	Asia	6	13	19
+TLS	Timor-Leste	Asia	12		
+TGO	Togo	Africa	22	0	22
+TON	Tonga	Oceania	0		
+TTO	Trinidad and Tobago	North America	10	14	24
+TUN	Tunisia	Africa	10	6	16
+TUR	Turkey	Asia	12	14.5	26.5
+TKM	Turkmenistan	Asia
+TCA	Turks and Caicos Islands	North America
+TUV	Tuvalu	Oceania
+UGA	Uganda	Africa	15	13	28
+UKR	Ukraine	Europe	24	13	37
+ARE	United Arab Emirates	Asia	30	10	40
+GBR	United Kingdom	Europe	20	8	28
+USA	United States	North America	0	0	0
+UMC	Upper middle income
+URY	Uruguay	South America	20	5	25
+UZB	Uzbekistan	Asia	15		
+VUT	Vanuatu	Oceania	15	0	15
+VEN	"Venezuela, RB"	South America	15		
+VNM	Vietnam	Asia	12	11	23
+VIR	Virgin Islands (U.S.)	North America
+PSE	West Bank and Gaza	Asia	21	12	33
+WLD	World
+YEM	"Yemen, Rep."	Asia	22	15	37
+ZMB	Zambia	Africa	20	11	31
+ZWE	Zimbabwe	Africa	22	11	33
+		Europe
