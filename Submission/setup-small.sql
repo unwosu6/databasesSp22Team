@@ -1,7 +1,5 @@
-CREATE TABLE Year(
-	year INT,
-	PRIMARY KEY (year)
-);
+-- Joanna Bi jbi9
+-- Udochukwu Nwosu unwosu6
 
 CREATE TABLE Demographic(
 	sex VARCHAR(10),
@@ -27,7 +25,6 @@ CREATE TABLE AnnualCountryStats(
 	fertRate FLOAT,
 	lifeSatisfaction FLOAT,
 	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
-	FOREIGN KEY (year) REFERENCES Year(year) ON DELETE CASCADE ON UPDATE CASCADE,
 	CHECK (pctUsingInternet >= 0 AND pctUsingInternet <= 100)
 );
 
@@ -41,7 +38,6 @@ CREATE TABLE AnnualDemoStats(
 	lifeExpect INT,
 	literacyRate FLOAT,
 	PRIMARY KEY (countryCode, year, sex),
-	FOREIGN KEY (year) REFERENCES Year(year) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
 	FOREIGN KEY (sex) REFERENCES Demographic(sex),
 	CHECK (pctAdvancedEdu >= 0 AND pctAdvancedEdu <= 100),
@@ -56,7 +52,6 @@ CREATE TABLE WorksIn(
 	sex VARCHAR(10), 
 	monthlyEarnings FLOAT,
 	PRIMARY KEY (sectorID, countryCode, year, sex),
-	FOREIGN KEY (year) REFERENCES Year(year) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
 	FOREIGN KEY (sex) REFERENCES Demographic(sex)
 );

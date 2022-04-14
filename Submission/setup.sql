@@ -1,7 +1,5 @@
-CREATE TABLE Year(
-	year INT,
-	PRIMARY KEY (year)
-);
+-- Joanna Bi jbi9
+-- Udochukwu Nwosu unwosu6
 
 CREATE TABLE Demographic(
 	sex VARCHAR(10),
@@ -23,11 +21,10 @@ CREATE TABLE AnnualCountryStats(
 	year INT,
 	pctUsingInternet FLOAT,
 	GDPperCap FLOAT,
-	population INT,
+	population BIGINT,
 	fertRate FLOAT,
 	lifeSatisfaction FLOAT,
 	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
-	FOREIGN KEY (year) REFERENCES Year(year) ON DELETE CASCADE ON UPDATE CASCADE,
 	CHECK (pctUsingInternet >= 0 AND pctUsingInternet <= 100)
 );
 
@@ -41,7 +38,6 @@ CREATE TABLE AnnualDemoStats(
 	lifeExpect INT,
 	literacyRate FLOAT,
 	PRIMARY KEY (countryCode, year, sex),
-	FOREIGN KEY (year) REFERENCES Year(year) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
 	FOREIGN KEY (sex) REFERENCES Demographic(sex),
 	CHECK (pctAdvancedEdu >= 0 AND pctAdvancedEdu <= 100),
@@ -56,16 +52,9 @@ CREATE TABLE WorksIn(
 	sex VARCHAR(10), 
 	monthlyEarnings FLOAT,
 	PRIMARY KEY (sectorID, countryCode, year, sex),
-	FOREIGN KEY (year) REFERENCES Year(year) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
 	FOREIGN KEY (sex) REFERENCES Demographic(sex)
 );
-
-LOAD DATA LOCAL INFILE 'Year.txt'
-INTO TABLE Year
-FIELDS TERMINATED BY '\t'
-LINES TERMINATED BY '\n'
-IGNORE 2 LINES;
 
 LOAD DATA LOCAL INFILE 'Demographic.txt'
 INTO TABLE Demographic
@@ -80,7 +69,6 @@ LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (countryCode, countryName, @vcontinent, @vpaidVacDays, @vpaidHoliday, @vpaidLeaveTotal)
 SET
-continent = NULLIF(@vcontinent,''),
 continent = NULLIF(@vcontinent,'NA'),
 paidVacDays = NULLIF(@vpaidVacDays,'NA'),
 paidHoliday = NULLIF(@vpaidHoliday,'NA'),

@@ -60,10 +60,6 @@ Downloaded from https://gist.github.com/tadast/8827699, country codes as country
 In sp22_db_cleanup.R
 Cleaned up, added country codes
 
------Year.txt-----
-The years are taken from years in WorksIn.txt, AnnualDemographicStats.txt, and AnnualDemographicStats.txt
-sp22_db_cleanup.R
-
 -----Demographic.txt-----
 Manually made one column with Female and Male
 sp22_db_cleanup.R
