@@ -10,11 +10,11 @@ CREATE TABLE Year(
 
 CREATE TABLE Country(
 	countryCode VARCHAR(3), 
-	countryName VARCHAR(200), 
-	continent VARCHAR(200), 
+	countryName VARCHAR(200) NOT NULL, 
+	continent VARCHAR(200) NOT NULL, 
 	paidVacDays INT, 
 	paidHolidy INT, 
-	paidLeaveTotal INT
+	paidLeaveTotal INT,
 	PRIMARY KEY (countryCode)
 );
 
@@ -37,7 +37,7 @@ CREATE TABLE AnnualDemographicStats(
 	countryCode VARCHAR(3),
 	year INT,
 	sex VARCHAR(10),
-	laborForcePartipation FLOAT
+	laborForcePartipation FLOAT,
 	pctAdvancedEdu FLOAT,
 	pctBasicEdu FLOAT,
 	lifeExpect INT,
@@ -54,11 +54,11 @@ CREATE TABLE AnnualDemographicStats(
 
 
 CREATE TABLE WorksIn(
-	sectorID, 
-	countryCode, 
-	year, 
-	sex, 
-	monthlyEarnings,
+	sectorID VARCHAR(200), 
+	countryCode VARCHAR(3), 
+	year INT, 
+	sex VARCHAR(10), 
+	monthlyEarnings FLOAT NOT NULL,
 	PRIMARY KEY (sectorID, countryCode, year, sex),
 	FOREIGN KEY (year) REFERENCES Year(year) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
