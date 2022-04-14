@@ -1,3 +1,6 @@
+Joanna Bi jbi9
+Udochukwu Nwosu unwosu6
+
 The order the process is written is important, as the .R code uses the output from the .py code. 
 Choice to use both python and R were due to different preferences between partners. 
 
