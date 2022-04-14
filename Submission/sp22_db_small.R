@@ -2,9 +2,9 @@ worksIn <- read.table("./WorksIn.txt", header = TRUE, sep = "\t")
 worksInSml <- worksIn[sample(1:nrow(worksIn), 15), ]
 write.table(worksInSml,"./WorksIn-small.txt",sep="\t", row.names=FALSE, col.names = TRUE, quote = FALSE)
 
-country <- read.table("./Country.txt", header = TRUE, sep = "\t")
-countrySml <- worksIn[sample(1:nrow(country), 15), ]
-write.table(countrySml,"./Country-small.txt",sep="\t", row.names=FALSE, col.names = TRUE, quote = FALSE)
+# country <- read.table("./Country.txt", header = TRUE, sep = "\t")
+# countrySml <- worksIn[sample(1:nrow(country), 15), ]
+# write.table(countrySml,"./Country-small.txt",sep="\t", row.names=FALSE, col.names = TRUE, quote = FALSE)
 
 acs <- read.table("./AnnualCountryStats.txt", header = TRUE)
 acsSml <- na.omit(acs)

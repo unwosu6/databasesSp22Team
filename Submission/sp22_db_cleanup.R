@@ -36,7 +36,7 @@ worksIn$countryCode[worksIn$countryName == "Occupied Palestinian Territory"] <- 
 worksIn <- worksIn[,c(3, 6, 4, 2, 5)]
 write.table(worksIn,"./WorksIn.txt",sep="\t", row.names=FALSE, col.names = TRUE, quote = FALSE)
 
-#Countrys
+#Country
 country <- read.table("./Country.txt", header = TRUE, fill = TRUE, sep = "\t") #file from country.py
 colnames(country) <- c("countryCode", "countryName", "continent", "paidVacDays", "paidHoliday", "paidLeaveTotal") #rename columns
 class(country$paidHoliday) <- "integer" #reclass columns
