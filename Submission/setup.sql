@@ -61,19 +61,19 @@ CREATE TABLE WorksIn(
 	FOREIGN KEY (sex) REFERENCES Demographic(sex)
 );
 
-LOAD DATA LOCAL INFILE 'Year-small.txt'
+LOAD DATA LOCAL INFILE 'Year.txt'
 INTO TABLE Year
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
 IGNORE 2 LINES;
 
-LOAD DATA LOCAL INFILE 'Demographic-small.txt'
+LOAD DATA LOCAL INFILE 'Demographic.txt'
 INTO TABLE Demographic
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
-LOAD DATA LOCAL INFILE 'Country-small.txt'
+LOAD DATA LOCAL INFILE 'Country.txt'
 INTO TABLE Country
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
@@ -86,7 +86,7 @@ paidVacDays = NULLIF(@vpaidVacDays,'NA'),
 paidHoliday = NULLIF(@vpaidHoliday,'NA'),
 paidLeaveTotal = NULLIF(@vpaidLeaveTotal,'NA');
 
-LOAD DATA LOCAL INFILE 'AnnualCountryStats-small.txt'
+LOAD DATA LOCAL INFILE 'AnnualCountryStats.txt'
 INTO TABLE AnnualCountryStats
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
@@ -99,7 +99,7 @@ population = NULLIF(@vpopulation,'NA'),
 fertRate = NULLIF(@vfertRate,'NA'),
 lifeSatisfaction = NULLIF(@vlifeSatisfaction, 'NA');
 
-LOAD DATA LOCAL INFILE 'AnnualDemoStats-small.txt'
+LOAD DATA LOCAL INFILE 'AnnualDemoStats.txt'
 INTO TABLE AnnualDemoStats
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
@@ -112,7 +112,7 @@ pctBasicEdu = NULLIF(@vpctBasicEdu,'NA'),
 lifeExpect = NULLIF(@vlifeExpect,'NA'),
 literacyRate = NULLIF(@vliteracyRate, 'NA');
 
-LOAD DATA LOCAL INFILE 'WorksIn-small.txt'
+LOAD DATA LOCAL INFILE 'WorksIn.txt'
 INTO TABLE WorksIn
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
