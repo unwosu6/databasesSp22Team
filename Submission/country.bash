@@ -17,3 +17,15 @@ awk '$1 == "PHL" {print}' Country.txt >> Country-small.txt
 awk '$1 == "MEX" {print}' Country.txt >> Country-small.txt
 awk '$1 == "TTO" {print}' Country.txt >> Country-small.txt
 awk '$1 == "GBR" {print}' Country.txt >> Country-small.txt
+awk '$1 == "SVK" {print}' Country.txt >> Country-small.txt
+awk '$1 == "ECU" {print}' Country.txt >> Country-small.txt
+awk '$1 == "PAN" {print}' Country.txt >> Country-small.txt
+awk '$1 == "EGY" {print}' Country.txt >> Country-small.txt
+awk '$1 == "AUT" {print}' Country.txt >> Country-small.txt
+awk '$1 == "MNG" {print}' Country.txt >> Country-small.txt
+awk '$1 == "UGA" {print}' Country.txt >> Country-small.txt
+awk '$1 == "IDN" {print}' Country.txt >> Country-small.txt
+awk '$1 == "KAZ" {print}' Country.txt >> Country-small.txt
+awk '$1 == "ZWE" {print}' Country.txt >> Country-small.txt
+awk '$1 == "LUX" {print}' Country.txt >> Country-small.txt
+awk '$1 == "CZE" {print}' Country.txt >> Country-small.txt

@@ -61,7 +61,7 @@ CREATE TABLE WorksIn(
 	countryCode VARCHAR(3), 
 	year INT, 
 	sex VARCHAR(10), 
-	monthlyEarnings FLOAT NOT NULL,
+	monthlyEarnings FLOAT,
 	PRIMARY KEY (sectorID, countryCode, year, sex),
 	FOREIGN KEY (year) REFERENCES Year(year) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
@@ -74,7 +74,7 @@ FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
 IGNORE 2 LINES;
 
-LOAD DATA LOCAL INFILE 'Demographics-small.txt'
+LOAD DATA LOCAL INFILE 'Demographic-small.txt'
 INTO TABLE Demographic
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
@@ -88,10 +88,10 @@ IGNORE 1 LINES
 (countryCode, countryName, @vcontinent, @vpaidVacDays, @vpaidHoliday, @vpaidLeaveTotal)
 SET
 continent = NULLIF(@vcontinent,''),
-continent = NULLIF(@vcontinent,'NULL'),
-paidVacDays = NULLIF(@vpaidVacDays,'NULL'),
-paidHoliday = NULLIF(@vpaidHoliday,'NULL'),
-paidLeaveTotal = NULLIF(@vpaidLeaveTotal,'NULL');
+continent = NULLIF(@vcontinent,'NA'),
+paidVacDays = NULLIF(@vpaidVacDays,'NA'),
+paidHoliday = NULLIF(@vpaidHoliday,'NA'),
+paidLeaveTotal = NULLIF(@vpaidLeaveTotal,'NA');
 
 LOAD DATA LOCAL INFILE 'AnnualCountryStats-small.txt'
 INTO TABLE AnnualCountryStats
@@ -123,4 +123,7 @@ LOAD DATA LOCAL INFILE 'WorksIn-small.txt'
 INTO TABLE WorksIn
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
-IGNORE 1 LINES;
+IGNORE 1 LINES
+(sectorID, countryCode, year, sex, @vmonthlyEarnings)
+SET
+monthlyEarnings = NULLIF(@vmonthlyEarnings,'NA');
