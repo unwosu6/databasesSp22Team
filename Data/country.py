@@ -30,22 +30,28 @@ i4 = open('countryAndCodes.txt','r')
 L4 = i4.readlines()
 i4.close()
 countryToCode = {}
+cleanCountry = {}
 for line in L4:
     myLine = line[:-1].split('\t')
     country = myLine[0]
     code = myLine[2]
     countryToCode[country] = code
-
+    cleanCountry[code] = country
+# print(cleanCountry)
 countryDict = {}
 for line in L:
-    name = line.split('\t')[0]
-    code = line.split('\t')[1]
+    myLine = line.split('\t')
+    name = myLine[0]
+    code = myLine[1]
+    if name not in countryToCode:
+        countryToCode[name] = code
+    if code in cleanCountry:
+        name = cleanCountry[countryToCode[name]]
     if code not in countryDict:
         countryDict[code] = []
         countryDict[code].append(name)
-    if name not in countryToCode:
-        countryToCode[name] = code
 countryToCode['Russia'] = 'RUS'
+countryToCode['The Bahamas'] = 'BHS'
 # create Country.txt
 i2 = open('continent.txt', 'r')
 L2 = i2.readlines()
@@ -61,11 +67,11 @@ for line in L2:
         continent = myLine[6]
         countryDict[code].append(continent)
 
-i3 = open('vacation-days.csv','r')
+i3 = open('vacation-days.txt','r')
 L3 = i3.readlines()
 i3.close()
 for line in L3[1:]:
-    myLine = line[:-1].split(',')
+    myLine = line[:-1].split('\t')
     country = myLine[0]
     if country not in countryToCode:
         print("cannot find country: " + country + " look in continent?")
@@ -73,6 +79,7 @@ for line in L3[1:]:
         code = countryToCode[country]
         if code in countryDict:
             countryDict[code].extend(myLine[1:])
+
 o2 = open('Country.txt', 'w')
 o2.write('countryCode\tcountryName\tcontinent\tpaidVacDays\tpaidHolidy\tpaidLeaveTotal\n')
 for code, countryList in countryDict.items():

@@ -307,6 +307,7 @@ Virgin Islands (U.S.)	VIR
 West Bank and Gaza	PSE
 World	WLD
 "Yemen, Rep."	YEM
+The Bahamas	BHS
 China, Hong Kong Special Administrative Region	HKG
 China, Macao Special Administrative Region	MAC
 Congo	COG

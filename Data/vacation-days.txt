@@ -1,0 +1,195 @@
+Country and flag	Paid vacation days  (five-day workweek)[1][2]	Paid public holidays[3][4]	Total paid leave (five-day workweek)
+Afghanistan	20	15	35
+Albania	20	12	32
+Algeria	30	11	41
+Andorra	31	14	45
+Angola	22	11	33
+Antigua and Barbuda	12	11	23
+Argentina	10	19	29
+Armenia	20	12	36
+Australia	20	10	30
+Austria	25	13	38
+Azerbaijan	21	19	40
+The Bahamas	10	10	20
+Bahrain	30	14	44
+Bangladesh	10	11	21
+Barbados	15	NULL	NULL
+Belarus	24	9	33
+Belgium	20	10	30
+Belize	14	13	27
+Benin	24	13	37
+Bhutan	9	NULL	NULL
+Bolivia	15	11	26
+Bosnia and Herzegovina	20	9	29
+Botswana	15	14	29
+Brazil	10	12	22
+Brunei Darussalam	7	11	18
+Bulgaria	20	12	32
+Burkina Faso	30	15	45
+Burundi	17	13	30
+Cape Verde	22	0	22
+Cambodia	18	27	45
+Cameroon	18	NULL	NULL
+Canada	10	6	16
+Central African Republic	24	NULL	NULL
+Chad	24	3	27
+Chile	15	15	30
+China	5	11	16
+Colombia	15	18	33
+Comoros	25	NULL	NULL
+Democratic Republic of Congo	12	NULL	NULL
+Congo	26	NULL	NULL
+Costa Rica	10	9	19
+Croatia	20	13	33
+Cuba	22	9	33
+Cyprus	20	14	34
+Czech Republic	20	13	33
+Denmark	25	11	36
+Djibouti	25	10	35
+Dominica	10	12	22
+Dominican Republic	10	13	23
+Ecuador	11	12	23
+Egypt	21	13	34
+El Salvador	15	11	26
+Equatorial Guinea	30	NULL	NULL
+Eritrea	12	NULL	NULL
+Estonia	28	11	39
+Ethiopia	12	13	25
+European Union	20	0	20
+Fiji	10	12	22
+Finland	25	11	36
+France	25	11	36
+Gabon	20	14	34
+Gambia	21	NULL	NULL
+Georgia	24	15	39
+Germany	20	10	30
+Ghana	15	13	28
+Greece	20	12	32
+Grenada	10	13	23
+Guatemala	15	10	25
+Guinea	22	11	33
+Guinea-Bissau	22	NULL	NULL
+Guyana	12	0	12
+Haiti	11	16	27
+Honduras	8	11	19
+Hong Kong	7	17	24
+Hungary	20	13	33
+Iceland	24	14	38
+India	12	15	27
+Indonesia	12	15	27
+Iran (Islamic Republic of)	26	27	53
+Iraq	20	NULL	NULL
+Ireland	20	10	30
+Israel	12	9	21
+Italy	20	12	32
+Ivory Coast	20	14	34
+Jamaica	10	NULL	NULL
+Japan	10	16	26
+Jersey	10	9	19
+Jordan	14	10	24
+Kazakhstan	24	16	40
+Kenya	21	10	28
+Kiribati	0	NULL	NULL
+Kosovo	20	12	32
+Kuwait	30	13	43
+Kyrgyzstan	20	NULL	NULL
+Laos	15	NULL	NULL
+Latvia	20	12	32
+Lebanon	15	22	37
+Lesotho	12	10	22
+Liberia	10	11	21
+Libya	22	NULL	NULL
+Lithuania	20	14	34
+Luxembourg	26	11	37
+Madagascar	22	13	35
+Malawi	18	NULL	NULL
+Malaysia	8	11	19
+Maldives	22	NULL	NULL
+Mali	22	NULL	NULL
+Malta	27	14	41
+Marshall Islands	0	NULL	NULL
+Mauritania	15	7	22
+Mauritius	22	16	38
+Mexico	6	7	13
+Micronesia	0	NULL	NULL
+Moldova	20	0	20
+Mongolia	15	0	15
+Montenegro	21	NULL	NULL
+Morocco	15	13	25
+Mozambique	10	9	19
+Myanmar	10	14	24
+Namibia	20	NULL	NULL
+Nauru	0	NULL	NULL
+Nepal	15	13	28
+Netherlands	20	8	28
+New Zealand	20	11	31
+Nicaragua	11	9	20
+Niger	22	12	34
+Nigeria	5	NULL	NULL
+North Macedonia	20	12	32
+Norway	25	10	35
+Oman	22	9	31
+Pakistan	14	15	29
+Palau	0	NULL	NULL
+Palestine	21	12	33
+Panama	30	10	40
+Papua New Guinea	10	9	19
+Paraguay	10	12	22
+Peru	30	12	42
+Philippines	5	12	17
+Poland	26	13	33
+Portugal	22	9	31
+Puerto Rico	15	0	15
+Qatar	15	10	25
+Romania	20	13	34
+Russia	20	14	34
+Rwanda	15	11	26
+Samoa	10	11	21
+Saint Kitts and Nevis	12	NULL	NULL
+Saint Lucia	14	13	27
+Saint Vincent and the Grenadines	16	NULL	NULL
+San Marino	10	NULL	NULL
+Sao Tome and Principe	25	9	34
+Saudi Arabia	21	9	30
+Senegal	20	12	32
+Serbia	20	11	31
+Seychelles	21	13	34
+Sierra Leone	18	NULL	NULL
+Singapore	7	11	18
+Slovakia	25	15	40
+Slovenia	20	13	33
+Solomon Islands	15	0	15
+Somalia	13	9	22
+South Africa	15	12	27
+South Korea	15	15	30
+South Sudan	20	12	32
+Spain	22	11	33
+Sri Lanka	20	20	40
+Sudan	20	NULL	NULL
+Suriname	12	18	30
+Swaziland	10	NULL	NULL
+Sweden	25	9	34
+Switzerland	20	7	27
+Syria	24	13	37
+Taiwan	3	12	15
+Tanzania	20	17	37
+Thailand	6	13	19
+East Timor	12	NULL	NULL
+Togo	22	0	22
+Tonga	0	NULL	NULL
+Trinidad and Tobago	10	14	24
+Tunisia	10	6	16
+Turkey	12	14.5	26.5
+Uganda	15	13	28
+Ukraine	24	13	37
+United Arab Emirates	30	10	40
+United Kingdom	20	8	28
+United States	0	0	0
+Uruguay	20	5	25
+Uzbekistan	15	NULL	NULL
+Vanuatu	15	0	15
+Venezuela	15	NULL	NULL
+Vietnam	12	11	23
+Yemen	22	15	37
+Zambia	20	11	31
+Zimbabwe	22	11	33
