@@ -1,11 +1,17 @@
 DROP TABLE IF EXISTS AnnualCountryStats;
+DROP TABLE IF EXISTS AnnualDemoStats;
 DROP TABLE IF EXISTS Country;
 DROP TABLE IF EXISTS Year;
-DROP TABLE IF EXISTS Year1;
+DROP TABLE IF EXISTS Demographic;
 
 CREATE TABLE Year(
 	year INT,
 	PRIMARY KEY (year)
+);
+
+CREATE TABLE Demographic(
+	sex VARCHAR(10),
+	PRIMARY KEY (sex)
 );
 
 CREATE TABLE Country(
@@ -31,11 +37,35 @@ CREATE TABLE AnnualCountryStats(
 	CHECK (pctUsingInternet >= 0 AND pctUsingInternet <= 100)
 );
 
+CREATE TABLE AnnualDemoStats(
+	countryCode VARCHAR(3),
+	year INT,
+	sex VARCHAR(10),
+	laborForcePartipation FLOAT,
+	pctAdvancedEdu FLOAT,
+	pctBasicEdu FLOAT,
+	lifeExpect INT,
+	literacyRate FLOAT,
+	PRIMARY KEY (countryCode, year, sex),
+	FOREIGN KEY (year) REFERENCES Year(year) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
+	FOREIGN KEY (sex) REFERENCES Demographic(sex),
+	CHECK (pctAdvancedEdu >= 0 AND pctAdvancedEdu <= 100),
+	CHECK (pctBasicEdu >= 0 AND pctBasicEdu <= 100),
+	CHECK (literacyRate >= 0 AND literacyRate <= 100)
+);
+
 LOAD DATA LOCAL INFILE 'Year-small.txt'
 INTO TABLE Year
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
 IGNORE 2 LINES;
+
+LOAD DATA LOCAL INFILE 'Demographics-small.txt'
+INTO TABLE Demographic
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
 
 LOAD DATA LOCAL INFILE 'Country-small.txt'
 INTO TABLE Country
@@ -62,3 +92,16 @@ GDPperCap = NULLIF(@vGDPperCap,'NA'),
 population = NULLIF(@vpopulation,'NA'),
 fertRate = NULLIF(@vfertRate,'NA'),
 lifeSatisfaction = NULLIF(@vlifeSatisfaction, 'NA');
+
+LOAD DATA LOCAL INFILE 'AnnualDemoStats-small.txt'
+INTO TABLE AnnualDemoStats
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(countryCode, year, sex, @vlaborForcePartipation, @vpctAdvancedEdu, @vpctBasicEdu, @vlifeExpect, @vliteracyRate)
+SET
+laborForcePartipation = NULLIF(@vlaborForcePartipation,'NA'),
+pctAdvancedEdu = NULLIF(@vpctAdvancedEdu,'NA'),
+pctBasicEdu = NULLIF(@vpctBasicEdu,'NA'),
+lifeExpect = NULLIF(@vlifeExpect,'NA'),
+literacyRate = NULLIF(@vliteracyRate, 'NA');

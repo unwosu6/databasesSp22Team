@@ -13,7 +13,7 @@ CREATE TABLE Country(
 	countryName VARCHAR(200) NOT NULL, 
 	continent VARCHAR(200) NOT NULL, 
 	paidVacDays INT, 
-	paidHolidy INT, 
+	paidHoliday INT, 
 	paidLeaveTotal INT,
 	PRIMARY KEY (countryCode)
 );
@@ -33,7 +33,7 @@ CREATE TABLE AnnualCountryStats(
 );
 
 
-CREATE TABLE AnnualDemographicStats(
+CREATE TABLE AnnualDemoStats(
 	countryCode VARCHAR(3),
 	year INT,
 	sex VARCHAR(10),
@@ -41,7 +41,6 @@ CREATE TABLE AnnualDemographicStats(
 	pctAdvancedEdu FLOAT,
 	pctBasicEdu FLOAT,
 	lifeExpect INT,
-	fertRate FLOAT,
 	literacyRate FLOAT,
 	PRIMARY KEY (countryCode, year, sex),
 	FOREIGN KEY (year) REFERENCES Year(year) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -72,7 +71,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
 LOAD DATA LOCAL INFILE 'Country-small.txt'
-INTO TABLE Year
+INTO TABLE Country
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
@@ -89,7 +88,7 @@ FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
-LOAD DATA LOCAL INFILE 'AnnualDemographicStats-small.txt'
+LOAD DATA LOCAL INFILE 'AnnualDemoStats-small.txt'
 INTO TABLE AnnualDemographicStats
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
