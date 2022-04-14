@@ -11,3 +11,9 @@ Convert ".." values in pctUsingInternet/GDPperCap to NA.
 Convert column classes appropriately
 
 
+WorksIn.txt
+Downloaded from https://ilostat.ilo.org/topics/wages/, "Mean nominal monthly earnings of employees by sex and occupation | Annual", excel file
+Manually deleted first 5 rows (was just notes), and columns titles “Notes” “2017 PPP $” “Local currency” “Source” in excel
+With R (sp22_db_cleanup.R):
+Renamed columns
+Replaced country name with country code
