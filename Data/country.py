@@ -35,7 +35,9 @@ for line in L:
         countryDict[code] = []
         countryDict[code].append(name)
     if name not in countryToCode:
+        print(name)
         countryToCode[name] = code
+countryToCode['Russia'] = 'RUS'
 # create Country.txt
 i2 = open('continent.txt', 'r')
 L2 = i2.readlines()

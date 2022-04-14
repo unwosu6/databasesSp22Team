@@ -180,7 +180,7 @@ PRT	Portugal	Europe	22	9	31
 PRI	Puerto Rico	North America	15	0	15
 QAT	Qatar	Asia	15	10	25
 ROU	Romania	Europe	20	13	34
-RUS	Russian Federation	Europe
+RUS	Russian Federation	Europe	20	14	34
 RWA	Rwanda	Africa	15	11	26
 WSM	Samoa	Oceania	10	11	21
 SMR	San Marino	Europe	10		

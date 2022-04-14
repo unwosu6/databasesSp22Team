@@ -1,1 +1,278 @@
-Afghanistan	AFGAlbania	ALBAlgeria	DZAAmerican Samoa	ASMAndorra	ANDAngola	AGOAntigua and Barbuda	ATGArab World	ARBArgentina	ARGArmenia	ARMAruba	ABWAustralia	AUSAustria	AUTAzerbaijan	AZE"Bahamas, The"	BHSBahrain	BHRBangladesh	BGDBarbados	BRBBelarus	BLRBelgium	BELBelize	BLZBenin	BENBermuda	BMUBhutan	BTNBolivia	BOLBosnia and Herzegovina	BIHBotswana	BWABrazil	BRABritish Virgin Islands	VGBBrunei Darussalam	BRNBulgaria	BGRBurkina Faso	BFABurundi	BDICabo Verde	CPVCambodia	KHMCameroon	CMRCanada	CANCayman Islands	CYMCentral African Republic	CAFChad	TCDChannel Islands	CHIChile	CHLChina	CHNColombia	COLComoros	COM"Congo, Dem. Rep."	COD"Congo, Rep."	COGCosta Rica	CRICote d'Ivoire	CIVCroatia	HRVCuba	CUBCuracao	CUWCyprus	CYPCzech Republic	CZEDenmark	DNKDjibouti	DJIDominica	DMADominican Republic	DOMEast Asia & Pacific	EASEast Asia & Pacific (excluding high income)	EAPEcuador	ECU"Egypt, Arab Rep."	EGYEl Salvador	SLVEquatorial Guinea	GNQEritrea	ERIEstonia	ESTEswatini	SWZEthiopia	ETHEuro area	EMUEurope & Central Asia	ECSEurope & Central Asia (excluding high income)	ECAEuropean Union	EUUFaroe Islands	FROFiji	FJIFinland	FINFrance	FRAFrench Polynesia	PYFGabon	GAB"Gambia, The"	GMBGeorgia	GEOGermany	DEUGhana	GHAGibraltar	GIBGreece	GRCGreenland	GRLGrenada	GRDGuam	GUMGuatemala	GTMGuinea	GINGuinea-Bissau	GNBGuyana	GUYHaiti	HTIHeavily indebted poor countries (HIPC)	HPCHigh income	HICHonduras	HND"Hong Kong SAR, China"	HKGHungary	HUNIceland	ISLIndia	INDIndonesia	IDN"Iran, Islamic Rep."	IRNIraq	IRQIreland	IRLIsle of Man	IMNIsrael	ISRItaly	ITAJamaica	JAMJapan	JPNJordan	JORKazakhstan	KAZKenya	KENKiribati	KIR"Korea, Dem. People’s Rep."	PRK"Korea, Rep."	KORKosovo	XKXKuwait	KWTKyrgyz Republic	KGZLao PDR	LAOLatin America & Caribbean	LCNLatin America & Caribbean (excluding high income)	LACLatvia	LVALeast developed countries: UN classification	LDCLebanon	LBNLesotho	LSOLiberia	LBRLibya	LBYLiechtenstein	LIELithuania	LTULow & middle income	LMYLow income	LICLower middle income	LMCLuxembourg	LUX"Macao SAR, China"	MAC"Macedonia, FYR"	MKDMadagascar	MDGMalawi	MWIMalaysia	MYSMaldives	MDVMali	MLIMalta	MLTMarshall Islands	MHLMauritania	MRTMauritius	MUSMexico	MEX"Micronesia, Fed. Sts."	FSMMiddle East & North Africa	MEAMiddle East & North Africa (excluding high income)	MNAMiddle income	MICMoldova	MDAMonaco	MCOMongolia	MNGMontenegro	MNEMorocco	MARMozambique	MOZMyanmar	MMRNamibia	NAMNauru	NRUNepal	NPLNetherlands	NLDNew Caledonia	NCLNew Zealand	NZLNicaragua	NICNiger	NERNigeria	NGANorth America	NACNorthern Mariana Islands	MNPNorway	NOROECD members	OEDOman	OMNPakistan	PAKPalau	PLWPanama	PANPapua New Guinea	PNGParaguay	PRYPeru	PERPhilippines	PHLPoland	POLPortugal	PRTPuerto Rico	PRIQatar	QATRomania	ROURussian Federation	RUSRwanda	RWASamoa	WSMSan Marino	SMRSao Tome and Principe	STPSaudi Arabia	SAUSenegal	SENSerbia	SRBSeychelles	SYCSierra Leone	SLESingapore	SGPSint Maarten (Dutch part)	SXMSlovak Republic	SVKSlovenia	SVNSolomon Islands	SLBSomalia	SOMSouth Africa	ZAFSouth Asia	SASSouth Sudan	SSDSpain	ESPSri Lanka	LKASt. Kitts and Nevis	KNASt. Lucia	LCASt. Martin (French part)	MAFSt. Vincent and the Grenadines	VCTSub-Saharan Africa	SSFSub-Saharan Africa (excluding high income)	SSASudan	SDNSuriname	SURSweden	SWESwitzerland	CHESyrian Arab Republic	SYRTajikistan	TJKTanzania	TZAThailand	THATimor-Leste	TLSTogo	TGOTonga	TONTrinidad and Tobago	TTOTunisia	TUNTurkey	TURTurkmenistan	TKMTurks and Caicos Islands	TCATuvalu	TUVUganda	UGAUkraine	UKRUnited Arab Emirates	AREUnited Kingdom	GBRUnited States	USAUpper middle income	UMCUruguay	URYUzbekistan	UZBVanuatu	VUT"Venezuela, RB"	VENVietnam	VNMVirgin Islands (U.S.)	VIRWest Bank and Gaza	PSEWorld	WLD"Yemen, Rep."	YEMZambia	ZMBZimbabwe	ZWE	Data from database: Jobs	Last Updated: 02/17/2021	Bahamas	BHSChina, Hong Kong Special Administrative Region	HKGChina, Macao Special Administrative Region	MACCongo	COGCôte d’Ivoire	CIVCuraçao	CUWCzechia	CZEDemocratic People's Republic of Korea	PRKDemocratic Republic of the Congo	CODEgypt	EGYGambia	GMBIran (Islamic Republic of)	IRNKyrgyzstan	KGZLao People's Democratic Republic	LAOMicronesia (Federated States of)	FSMNorth Macedonia	MKDRepublic of Korea	KORRepublic of Moldova	MDASaint Kitts and Nevis	KNASaint Lucia	LCASaint Martin (French Part)	MAFSaint Vincent and the Grenadines	VCTSark	Slovakia	SVKState of Palestine	PSEUnited Kingdom of Great Britain and Northern Ireland	GBRUnited Republic of Tanzania	TZAUnited States of America	USAUnited States Virgin Islands	VIRVenezuela (Bolivarian Republic of)	VENViet Nam	VNMYemen	YEM
+Afghanistan	AFG
+Albania	ALB
+Algeria	DZA
+American Samoa	ASM
+Andorra	AND
+Angola	AGO
+Antigua and Barbuda	ATG
+Arab World	ARB
+Argentina	ARG
+Armenia	ARM
+Aruba	ABW
+Australia	AUS
+Austria	AUT
+Azerbaijan	AZE
+"Bahamas, The"	BHS
+Bahrain	BHR
+Bangladesh	BGD
+Barbados	BRB
+Belarus	BLR
+Belgium	BEL
+Belize	BLZ
+Benin	BEN
+Bermuda	BMU
+Bhutan	BTN
+Bolivia	BOL
+Bosnia and Herzegovina	BIH
+Botswana	BWA
+Brazil	BRA
+British Virgin Islands	VGB
+Brunei Darussalam	BRN
+Bulgaria	BGR
+Burkina Faso	BFA
+Burundi	BDI
+Cabo Verde	CPV
+Cambodia	KHM
+Cameroon	CMR
+Canada	CAN
+Cayman Islands	CYM
+Central African Republic	CAF
+Chad	TCD
+Channel Islands	CHI
+Chile	CHL
+China	CHN
+Colombia	COL
+Comoros	COM
+"Congo, Dem. Rep."	COD
+"Congo, Rep."	COG
+Costa Rica	CRI
+Cote d'Ivoire	CIV
+Croatia	HRV
+Cuba	CUB
+Curacao	CUW
+Cyprus	CYP
+Czech Republic	CZE
+Denmark	DNK
+Djibouti	DJI
+Dominica	DMA
+Dominican Republic	DOM
+East Asia & Pacific	EAS
+East Asia & Pacific (excluding high income)	EAP
+Ecuador	ECU
+"Egypt, Arab Rep."	EGY
+El Salvador	SLV
+Equatorial Guinea	GNQ
+Eritrea	ERI
+Estonia	EST
+Eswatini	SWZ
+Ethiopia	ETH
+Euro area	EMU
+Europe & Central Asia	ECS
+Europe & Central Asia (excluding high income)	ECA
+European Union	EUU
+Faroe Islands	FRO
+Fiji	FJI
+Finland	FIN
+France	FRA
+French Polynesia	PYF
+Gabon	GAB
+"Gambia, The"	GMB
+Georgia	GEO
+Germany	DEU
+Ghana	GHA
+Gibraltar	GIB
+Greece	GRC
+Greenland	GRL
+Grenada	GRD
+Guam	GUM
+Guatemala	GTM
+Guinea	GIN
+Guinea-Bissau	GNB
+Guyana	GUY
+Haiti	HTI
+Heavily indebted poor countries (HIPC)	HPC
+High income	HIC
+Honduras	HND
+"Hong Kong SAR, China"	HKG
+Hungary	HUN
+Iceland	ISL
+India	IND
+Indonesia	IDN
+"Iran, Islamic Rep."	IRN
+Iraq	IRQ
+Ireland	IRL
+Isle of Man	IMN
+Israel	ISR
+Italy	ITA
+Jamaica	JAM
+Japan	JPN
+Jordan	JOR
+Kazakhstan	KAZ
+Kenya	KEN
+Kiribati	KIR
+"Korea, Dem. People’s Rep."	PRK
+"Korea, Rep."	KOR
+Kosovo	XKX
+Kuwait	KWT
+Kyrgyz Republic	KGZ
+Lao PDR	LAO
+Latin America & Caribbean	LCN
+Latin America & Caribbean (excluding high income)	LAC
+Latvia	LVA
+Least developed countries: UN classification	LDC
+Lebanon	LBN
+Lesotho	LSO
+Liberia	LBR
+Libya	LBY
+Liechtenstein	LIE
+Lithuania	LTU
+Low & middle income	LMY
+Low income	LIC
+Lower middle income	LMC
+Luxembourg	LUX
+"Macao SAR, China"	MAC
+"Macedonia, FYR"	MKD
+Madagascar	MDG
+Malawi	MWI
+Malaysia	MYS
+Maldives	MDV
+Mali	MLI
+Malta	MLT
+Marshall Islands	MHL
+Mauritania	MRT
+Mauritius	MUS
+Mexico	MEX
+"Micronesia, Fed. Sts."	FSM
+Middle East & North Africa	MEA
+Middle East & North Africa (excluding high income)	MNA
+Middle income	MIC
+Moldova	MDA
+Monaco	MCO
+Mongolia	MNG
+Montenegro	MNE
+Morocco	MAR
+Mozambique	MOZ
+Myanmar	MMR
+Namibia	NAM
+Nauru	NRU
+Nepal	NPL
+Netherlands	NLD
+New Caledonia	NCL
+New Zealand	NZL
+Nicaragua	NIC
+Niger	NER
+Nigeria	NGA
+North America	NAC
+Northern Mariana Islands	MNP
+Norway	NOR
+OECD members	OED
+Oman	OMN
+Pakistan	PAK
+Palau	PLW
+Panama	PAN
+Papua New Guinea	PNG
+Paraguay	PRY
+Peru	PER
+Philippines	PHL
+Poland	POL
+Portugal	PRT
+Puerto Rico	PRI
+Qatar	QAT
+Romania	ROU
+Russian Federation	RUS
+Rwanda	RWA
+Samoa	WSM
+San Marino	SMR
+Sao Tome and Principe	STP
+Saudi Arabia	SAU
+Senegal	SEN
+Serbia	SRB
+Seychelles	SYC
+Sierra Leone	SLE
+Singapore	SGP
+Sint Maarten (Dutch part)	SXM
+Slovak Republic	SVK
+Slovenia	SVN
+Solomon Islands	SLB
+Somalia	SOM
+South Africa	ZAF
+South Asia	SAS
+South Sudan	SSD
+Spain	ESP
+Sri Lanka	LKA
+St. Kitts and Nevis	KNA
+St. Lucia	LCA
+St. Martin (French part)	MAF
+St. Vincent and the Grenadines	VCT
+Sub-Saharan Africa	SSF
+Sub-Saharan Africa (excluding high income)	SSA
+Sudan	SDN
+Suriname	SUR
+Sweden	SWE
+Switzerland	CHE
+Syrian Arab Republic	SYR
+Tajikistan	TJK
+Tanzania	TZA
+Thailand	THA
+Timor-Leste	TLS
+Togo	TGO
+Tonga	TON
+Trinidad and Tobago	TTO
+Tunisia	TUN
+Turkey	TUR
+Turkmenistan	TKM
+Turks and Caicos Islands	TCA
+Tuvalu	TUV
+Uganda	UGA
+Ukraine	UKR
+United Arab Emirates	ARE
+United Kingdom	GBR
+United States	USA
+Upper middle income	UMC
+Uruguay	URY
+Uzbekistan	UZB
+Vanuatu	VUT
+"Venezuela, RB"	VEN
+Vietnam	VNM
+Virgin Islands (U.S.)	VIR
+West Bank and Gaza	PSE
+World	WLD
+"Yemen, Rep."	YEM
+Zambia	ZMB
+Zimbabwe	ZWE
+	
+Data from database: Jobs	
+Last Updated: 02/17/2021	
+Russia	RUS
+Bahamas	BHS
+China, Hong Kong Special Administrative Region	HKG
+China, Macao Special Administrative Region	MAC
+Congo	COG
+Côte d’Ivoire	CIV
+Curaçao	CUW
+Czechia	CZE
+Democratic People's Republic of Korea	PRK
+Democratic Republic of the Congo	COD
+Egypt	EGY
+Gambia	GMB
+Iran (Islamic Republic of)	IRN
+Kyrgyzstan	KGZ
+Lao People's Democratic Republic	LAO
+Micronesia (Federated States of)	FSM
+North Macedonia	MKD
+Republic of Korea	KOR
+Republic of Moldova	MDA
+Saint Kitts and Nevis	KNA
+Saint Lucia	LCA
+Saint Martin (French Part)	MAF
+Saint Vincent and the Grenadines	VCT
+Sark	
+Slovakia	SVK
+State of Palestine	PSE
+United Kingdom of Great Britain and Northern Ireland	GBR
+United Republic of Tanzania	TZA
+United States of America	USA
+United States Virgin Islands	VIR
+Venezuela (Bolivarian Republic of)	VEN
+Viet Nam	VNM
+Yemen	YEM

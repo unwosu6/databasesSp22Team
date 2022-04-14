@@ -7,8 +7,7 @@ CREATE TABLE AnnualCountryStats(
 	GDPperCap FLOAT,
 	population INT,
 	fertRate FLOAT,
-	lifeExpectMale FLOAT,
-	lifeExpectFem FLOAT,
+	lifeSatisfaction FLOAT,
 	PRIMARY KEY (countryCode, year)
 );
 
