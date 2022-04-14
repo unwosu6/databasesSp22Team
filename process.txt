@@ -1,1 +1,13 @@
 To create AnnualDemographicStats.txt:
+
+
+AnnualCountryStats.txt:
+//fill this out
+Downloaded life satisfaction from https://ourworldindata.org/happiness-and-life-satisfaction as a .csv file
+With R (sp22_db_cleanup.R):
+Renamed columns
+Merged lifeSatisfaction with AnnualCountryStats.txt by countryCode and year, excluded happiness values that do not have an existing countryCode/year in the .txt file. countryCode/year in the .txt file that don't have a happiness value have NA.
+Convert ".." values in pctUsingInternet/GDPperCap to NA. 
+Convert column classes appropriately
+
+
