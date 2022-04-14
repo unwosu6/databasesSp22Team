@@ -13,10 +13,11 @@ write.table(acs,"/Users/joannabi_general/Downloads/AnnualCountryStats.txt",sep="
 
 #worksIn
 wages <- read.csv("/Users/joannabi_general/Downloads/monthlywages.csv", header = TRUE)
+codes <- read.csv("/Users/joannabi_general/Downloads/countryCode.csv", header = TRUE)
+codes <- codes[c("Country", "Alpha.3.code")]
+colnames(codes) <- c("countryName", "countryCode")
 colnames(wages) <- c("countryName","sex", "sectorID", "year", "monthlyEarnings")
 worksIn <- merge(wages, codes, by = "countryName", all.x = TRUE)
 worksIn <- worksIn[,c(3, 1, 4, 2, 5)]
-write.table(pheno,"/Users/joannabi_general/Downloads/WorksIn.txt",sep="\t", row.names=FALSE, col.names = TRUE)
+write.table(worksIn,"/Users/joannabi_general/Downloads/WorksIn.txt",sep="\t", row.names=FALSE, col.names = TRUE)
 
-#AnnualDemographicStats
-annDemographic <- read.table("/Users/joannabi_general/Downloads/AnnualCountryStats.txt", header = TRUE)
