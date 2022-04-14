@@ -6,6 +6,7 @@ For Country we removed the religion attributes since they didn't add that much, 
 We replaced countryName attributes in WorksIn and AnnualCountryStats with countryCode, since that is more standardized and easier, being a 3 letter code. We also added that to Country.
 We removed the Year table (at the advice of TA Aditya) since it was redundant and did not add more information. 
 There is no problem if a tuple is added or deleted that has a year that is not seen elsewhere in the database.
+We kept the Demographic table to act as a constraint that would ensure no tuples would be added that contain values other than "Male" or "Female" for the sex attribute.
 We added lifeExpect (life expectancy) to AnnualDemographicStats as well.
 
 Issues:
