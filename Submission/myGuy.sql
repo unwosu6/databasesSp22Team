@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS AnnualCountryStats;
 DROP TABLE IF EXISTS Country;
 DROP TABLE IF EXISTS Year;
+DROP TABLE IF EXISTS Year1;
 
 CREATE TABLE Year(
 	year INT,
@@ -10,9 +11,9 @@ CREATE TABLE Year(
 CREATE TABLE Country(
 	countryCode VARCHAR(3), 
 	countryName VARCHAR(200) NOT NULL, 
-	continent VARCHAR(200) NOT NULL, 
+	continent VARCHAR(200), 
 	paidVacDays INT, 
-	paidHolidy INT, 
+	paidHoliday INT, 
 	paidLeaveTotal INT,
 	PRIMARY KEY (countryCode)
 );
@@ -34,16 +35,30 @@ LOAD DATA LOCAL INFILE 'Year-small.txt'
 INTO TABLE Year
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
-IGNORE 1 LINES;
+IGNORE 2 LINES;
 
 LOAD DATA LOCAL INFILE 'Country-small.txt'
-INTO TABLE Year
+INTO TABLE Country
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
-IGNORE 1 LINES;
+IGNORE 1 LINES
+(countryCode, countryName, @vcontinent, @vpaidVacDays, @vpaidHoliday, @vpaidLeaveTotal)
+SET
+continent = NULLIF(@vcontinent,''),
+continent = NULLIF(@vcontinent,'NULL'),
+paidVacDays = NULLIF(@vpaidVacDays,'NULL'),
+paidHoliday = NULLIF(@vpaidHoliday,'NULL'),
+paidLeaveTotal = NULLIF(@vpaidLeaveTotal,'NULL');
 
 LOAD DATA LOCAL INFILE 'AnnualCountryStats-small.txt'
 INTO TABLE AnnualCountryStats
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
-IGNORE 1 LINES;
+IGNORE 1 LINES
+(countryCode, year, @vpctUsingInternet, @vGDPperCap, @vpopulation, @vfertRate, @vlifeSatisfaction)
+SET
+pctUsingInternet = NULLIF(@vpctUsingInternet,'NA'),
+GDPperCap = NULLIF(@vGDPperCap,'NA'),
+population = NULLIF(@vpopulation,'NA'),
+fertRate = NULLIF(@vfertRate,'NA'),
+lifeSatisfaction = NULLIF(@vlifeSatisfaction, 'NA');

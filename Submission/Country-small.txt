@@ -2,7 +2,7 @@ ARE	United Arab Emirates	Asia	30	10	40
 NGA	Nigeria	Africa	5	NULL	NULL
 USA	United States	North America	0	0	0
 CHN	China	Asia	5	11	16
-ECA	Europe & Central Asia (excluding high income)
+ECA	Europe & Central Asia (excluding high income)	NULL	NULL	NULL
 MEX	Mexico	North America	6	7	13
 TTO	Trinidad and Tobago	North America	10	14	24
 GBR	United Kingdom	Europe	20	8	28
