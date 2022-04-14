@@ -1,19 +1,34 @@
-To create AnnualDemographicStats.txt:
+-----Country.txt-----
 
-
-AnnualCountryStats.txt:
+-----AnnualDemographicStats.txt-----
 //fill this out
+In R (sp22_db_cleanup.R):
+Convert ".." values in pctUsingInternet/GDPperCap to NA. 
+Convert column classes appropriately
+
+-----AnnualCountryStats.txt-----
+//fill this out
+
 Downloaded life satisfaction from https://ourworldindata.org/happiness-and-life-satisfaction as a .csv file
-With R (sp22_db_cleanup.R):
+In R (sp22_db_cleanup.R):
+Loaded AnnualCountryStats.txt after processing from python above
 Renamed columns
 Merged lifeSatisfaction with AnnualCountryStats.txt by countryCode and year, excluded happiness values that do not have an existing countryCode/year in the .txt file. countryCode/year in the .txt file that don't have a happiness value have NA.
 Convert ".." values in pctUsingInternet/GDPperCap to NA. 
 Convert column classes appropriately
 
 
-WorksIn.txt
+-----WorksIn.txt-----
 Downloaded from https://ilostat.ilo.org/topics/wages/, "Mean nominal monthly earnings of employees by sex and occupation | Annual", excel file
 Manually deleted first 5 rows (was just notes), and columns titles “Notes” “2017 PPP $” “Local currency” “Source” in excel
 With R (sp22_db_cleanup.R):
 Renamed columns
 Added country code (Downloaded from https://gist.github.com/tadast/8827699)
+
+-----Year.txt-----
+sp22_db_cleanup.R
+Included all years in WorksIn.txt, AnnualCountryStats.txt, and AnnualDemographicStats.txt
+
+-----Demographics.txt-----
+sp22_db_cleanup.R
+Male and Female in sex attribute
