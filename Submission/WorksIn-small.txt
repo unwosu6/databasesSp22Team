@@ -1,16 +1,16 @@
-"sectorID"	"countryName"	"year"	"sex"	"monthlyEarnings"
-"4. Clerical support workers"	"Eswatini"	2016	"Male"	404
-"4. Clerical support workers"	"Costa Rica"	2012	"Male"	825
-"8. Plant and machine operators, and assemblers"	"Israel"	2013	"Male"	2129
-"3. Technicians and associate professionals"	"North Macedonia"	2014	"Female"	709
-"7. Craft and related trades workers"	"Turkey"	2013	"Female"	403
-"1. Managers"	"Costa Rica"	2016	"Male"	3466
-"2. Professionals"	"Mauritius"	2014	"Male"	1357
-"9. Elementary occupations"	"Dominican Republic"	2016	"Male"	202
-"8. Plant and machine operators, and assemblers"	"Kazakhstan"	2018	"Male"	550
-"3. Technicians and associate professionals"	"Réunion"	2012	"Male"	4368
-"0. Armed forces occupations"	"Costa Rica"	2018	"Male"	0
-"6. Skilled agricultural, forestry and fishery workers"	"Brazil"	2016	"Female"	252
-"9. Elementary occupations"	"United Kingdom"	2017	"Male"	1991
-"4. Clerical support workers"	"Hungary"	2018	"Female"	999
-"8. Plant and machine operators, and assemblers"	"El Salvador"	2014	"Female"	233
+sectorID	countryCode	year	sex	monthlyEarnings
+3. Technicians and associate professionals	KAZ	2015	Male	577
+0. Armed forces occupations	FIN	2010	Male	5256
+7. Craft and related trades workers	HRV	2014	Male	1109
+7. Craft and related trades workers	GTM	2019	Female	185
+8. Plant and machine operators, and assemblers	MYS	2019	Male	554
+Total	MLT	2014	Female	2076
+8. Plant and machine operators, and assemblers	ZWE	2019	Female	NA
+5. Service and sales workers	SGP	2013	Male	1808
+2. Professionals	MEX	2021	Male	NA
+2. Professionals	ARG	2018	Male	1058
+Total	MYS	2014	Male	682
+2. Professionals	BRA	2014	Male	2041
+4. Clerical support workers	IRL	2014	Male	5148
+3. Technicians and associate professionals	MEX	2021	Female	NA
+2. Professionals	GIN	2019	Female	160
