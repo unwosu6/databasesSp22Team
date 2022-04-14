@@ -2,7 +2,7 @@ library(tidyverse)
 
 #AnnualCountryStats
 happiness <- read.csv("./happiness.csv", header = TRUE)
-annCountry <- read.table("/./AnnualCountryStats.txt", header = TRUE)
+annCountry <- read.table("./AnnualCountryStats.txt", header = TRUE)
 colnames(happiness) <- c("countryName","countryCode", "year", "lifeSatisfaction")
 happiness <- subset (happiness, select = -countryName)
 acs <- merge(annCountry, happiness, by = c("countryCode", "year"), all.x = TRUE)

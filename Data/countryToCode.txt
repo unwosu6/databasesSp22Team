@@ -307,9 +307,6 @@ Virgin Islands (U.S.)	VIR
 West Bank and Gaza	PSE
 World	WLD
 "Yemen, Rep."	YEM
-	
-Data from database: Jobs	
-Last Updated: 02/17/2021	
 China, Hong Kong Special Administrative Region	HKG
 China, Macao Special Administrative Region	MAC
 Congo	COG
@@ -323,7 +320,6 @@ Micronesia (Federated States of)	FSM
 Republic of Korea	KOR
 Republic of Moldova	MDA
 Saint Martin (French Part)	MAF
-Sark	
 State of Palestine	PSE
 United Kingdom of Great Britain and Northern Ireland	GBR
 United Republic of Tanzania	TZA

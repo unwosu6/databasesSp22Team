@@ -85,7 +85,7 @@ o2.close()
 
 #create AnnualCountryStats.txt
 o1 = open('AnnualCountryStats.txt', 'w')
-attributes = 'countryCode\tyear\tpctUsingInternet\tGDPperCap\tpopulation\tfertRate\tlifeExpectMale\tlifeExpectFem\n'
+attributes = 'countryCode\tyear\tpctUsingInternet\tGDPperCap\tpopulation\tfertRate\n'
 o1.write(attributes)
 countryStats = {}
 for line in L:

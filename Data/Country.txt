@@ -241,4 +241,3 @@ WLD	World
 YEM	"Yemen, Rep."	Asia	22	15	37
 ZMB	Zambia	Africa	20	11	31
 ZWE	Zimbabwe	Africa	22	11	33
-		Europe
