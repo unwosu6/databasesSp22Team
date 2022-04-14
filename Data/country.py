@@ -70,6 +70,7 @@ for line in L2:
 i3 = open('vacation-days.txt','r')
 L3 = i3.readlines()
 i3.close()
+goodCodes = []
 for line in L3[1:]:
     myLine = line[:-1].split('\t')
     country = myLine[0]
@@ -79,9 +80,15 @@ for line in L3[1:]:
         code = countryToCode[country]
         if code in countryDict:
             countryDict[code].extend(myLine[1:])
+            goodCodes.append(code)
+for code in countryDict:
+    if code not in goodCodes:
+        print('bad code ' + code)
+        countryDict[code].extend(["NULL", "NULL", "NULL"])
+
 
 o2 = open('Country.txt', 'w')
-o2.write('countryCode\tcountryName\tcontinent\tpaidVacDays\tpaidHolidy\tpaidLeaveTotal\n')
+o2.write('countryCode\tcountryName\tcontinent\tpaidVacDays\tpaidHoliday\tpaidLeaveTotal\n')
 for code, countryList in countryDict.items():
     myTuple = code + '\t'
     for val in countryList:

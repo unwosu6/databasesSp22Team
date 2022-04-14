@@ -1,15 +1,15 @@
-countryCode	countryName	continent	paidVacDays	paidHolidy	paidLeaveTotal
+countryCode	countryName	continent	paidVacDays	paidHoliday	paidLeaveTotal
 AFG	Afghanistan	Asia	20	15	35
 ALB	Albania	Europe	20	12	32
 DZA	Algeria	Africa	30	11	41
-ASM	American Samoa	Oceania
+ASM	American Samoa	Oceania	NULL	NULL	NULL
 AND	Andorra	Europe	31	14	45
 AGO	Angola	Africa	22	11	33
 ATG	Antigua and Barbuda	North America	12	11	23
-ARB	Arab World
+ARB	Arab World	NULL	NULL	NULL
 ARG	Argentina	South America	10	19	29
 ARM	Armenia	Asia	20	12	36
-ABW	Aruba	North America
+ABW	Aruba	North America	NULL	NULL	NULL
 AUS	Australia	Oceania	20	10	30
 AUT	Austria	Europe	25	13	38
 AZE	Azerbaijan	Asia	21	19	40
@@ -21,13 +21,13 @@ BLR	Belarus	Europe	24	9	33
 BEL	Belgium	Europe	20	10	30
 BLZ	Belize	North America	14	13	27
 BEN	Benin	Africa	24	13	37
-BMU	Bermuda	North America
+BMU	Bermuda	North America	NULL	NULL	NULL
 BTN	Bhutan	Asia	9	NULL	NULL
 BOL	Bolivia	South America	15	11	26
 BIH	Bosnia and Herzegovina	Europe	20	9	29
 BWA	Botswana	Africa	15	14	29
 BRA	Brazil	South America	10	12	22
-VGB	British Virgin Islands	North America
+VGB	British Virgin Islands	North America	NULL	NULL	NULL
 BRN	Brunei	Asia	7	11	18
 BGR	Bulgaria	Europe	20	12	32
 BFA	Burkina Faso	Africa	30	15	45
@@ -36,10 +36,10 @@ CPV	Cape Verde	Africa	22	0	22
 KHM	Cambodia	Asia	18	27	45
 CMR	Cameroon	Africa	18	NULL	NULL
 CAN	Canada	North America	10	6	16
-CYM	Cayman Islands	North America
+CYM	Cayman Islands	North America	NULL	NULL	NULL
 CAF	Central African Republic	Africa	24	NULL	NULL
 TCD	Chad	Africa	24	3	27
-CHI	Channel Islands
+CHI	Channel Islands	NULL	NULL	NULL
 CHL	Chile	South America	15	15	30
 CHN	China	Asia	5	11	16
 COL	Colombia	South America	15	18	33
@@ -50,15 +50,15 @@ CRI	Costa Rica	North America	10	9	19
 CIV	Ivory Coast	Africa	20	14	34
 HRV	Croatia	Europe	20	13	33
 CUB	Cuba	North America	22	9	33
-CUW	Curacao	North America
+CUW	Curacao	North America	NULL	NULL	NULL
 CYP	Cyprus	Asia	20	14	34
 CZE	Czechia	Europe	20	13	33
 DNK	Denmark	Europe	25	11	36
 DJI	Djibouti	Africa	25	10	35
 DMA	Dominica	North America	10	12	22
 DOM	Dominican Republic	North America	10	13	23
-EAS	East Asia & Pacific
-EAP	East Asia & Pacific (excluding high income)
+EAS	East Asia & Pacific	NULL	NULL	NULL
+EAP	East Asia & Pacific (excluding high income)	NULL	NULL	NULL
 ECU	Ecuador	South America	11	12	23
 EGY	Egypt	Africa	21	13	34
 SLV	El Salvador	North America	15	11	26
@@ -67,32 +67,32 @@ ERI	Eritrea	Africa	12	NULL	NULL
 EST	Estonia	Europe	28	11	39
 SWZ	Swaziland	Africa	10	NULL	NULL
 ETH	Ethiopia	Africa	12	13	25
-EMU	Euro area
-ECS	Europe & Central Asia
-ECA	Europe & Central Asia (excluding high income)
+EMU	Euro area	NULL	NULL	NULL
+ECS	Europe & Central Asia	NULL	NULL	NULL
+ECA	Europe & Central Asia (excluding high income)	NULL	NULL	NULL
 EUU	European Union	20	0	20
-FRO	Faroe Islands	Europe
+FRO	Faroe Islands	Europe	NULL	NULL	NULL
 FJI	Fiji	Oceania	10	12	22
 FIN	Finland	Europe	25	11	36
 FRA	France	Europe	25	11	36
-PYF	French Polynesia	Oceania
+PYF	French Polynesia	Oceania	NULL	NULL	NULL
 GAB	Gabon	Africa	20	14	34
 GMB	Gambia	Africa	21	NULL	NULL
 GEO	Georgia	Asia	24	15	39
 DEU	Germany	Europe	20	10	30
 GHA	Ghana	Africa	15	13	28
-GIB	Gibraltar	Europe
+GIB	Gibraltar	Europe	NULL	NULL	NULL
 GRC	Greece	Europe	20	12	32
-GRL	Greenland	North America
+GRL	Greenland	North America	NULL	NULL	NULL
 GRD	Grenada	North America	10	13	23
-GUM	Guam	Oceania
+GUM	Guam	Oceania	NULL	NULL	NULL
 GTM	Guatemala	North America	15	10	25
 GIN	Guinea	Africa	22	11	33
 GNB	Guinea-Bissau	Africa	22	NULL	NULL
 GUY	Guyana	South America	12	0	12
 HTI	Haiti	North America	11	16	27
-HPC	Heavily indebted poor countries (HIPC)
-HIC	High income
+HPC	Heavily indebted poor countries (HIPC)	NULL	NULL	NULL
+HIC	High income	NULL	NULL	NULL
 HND	Honduras	North America	8	11	19
 HKG	Hong Kong	Asia	7	17	24
 HUN	Hungary	Europe	20	13	33
@@ -102,7 +102,7 @@ IDN	Indonesia	Asia	12	15	27
 IRN	Iran	Asia	26	27	53
 IRQ	Iraq	Asia	20	NULL	NULL
 IRL	Ireland	Europe	20	10	30
-IMN	Isle of Man	Europe
+IMN	Isle of Man	Europe	NULL	NULL	NULL
 ISR	Israel	Asia	12	9	21
 ITA	Italy	Europe	20	12	32
 JAM	Jamaica	North America	10	NULL	NULL
@@ -111,27 +111,27 @@ JOR	Jordan	Asia	14	10	24
 KAZ	Kazakhstan	Asia	24	16	40
 KEN	Kenya	Africa	21	10	28
 KIR	Kiribati	Oceania	0	NULL	NULL
-PRK	North Korea	Asia
+PRK	North Korea	Asia	NULL	NULL	NULL
 KOR	South Korea	Asia	15	15	30
 XKX	Kosovo	20	12	32
 KWT	Kuwait	Asia	30	13	43
 KGZ	Kyrgyzstan	Asia	20	NULL	NULL
 LAO	Laos	Asia	15	NULL	NULL
-LCN	Latin America & Caribbean
-LAC	Latin America & Caribbean (excluding high income)
+LCN	Latin America & Caribbean	NULL	NULL	NULL
+LAC	Latin America & Caribbean (excluding high income)	NULL	NULL	NULL
 LVA	Latvia	Europe	20	12	32
-LDC	Least developed countries: UN classification
+LDC	Least developed countries: UN classification	NULL	NULL	NULL
 LBN	Lebanon	Asia	15	22	37
 LSO	Lesotho	Africa	12	10	22
 LBR	Liberia	Africa	10	11	21
 LBY	Libya	Africa	22	NULL	NULL
-LIE	Liechtenstein	Europe
+LIE	Liechtenstein	Europe	NULL	NULL	NULL
 LTU	Lithuania	Europe	20	14	34
-LMY	Low & middle income
-LIC	Low income
-LMC	Lower middle income
+LMY	Low & middle income	NULL	NULL	NULL
+LIC	Low income	NULL	NULL	NULL
+LMC	Lower middle income	NULL	NULL	NULL
 LUX	Luxembourg	Europe	26	11	37
-MAC	Macao	Asia
+MAC	Macao	Asia	NULL	NULL	NULL
 MKD	North Macedonia	Europe	20	12	32
 MDG	Madagascar	Africa	22	13	35
 MWI	Malawi	Africa	18	NULL	NULL
@@ -144,11 +144,11 @@ MRT	Mauritania	Africa	15	7	22
 MUS	Mauritius	Africa	22	16	38
 MEX	Mexico	North America	6	7	13
 FSM	Micronesia	Oceania	0	NULL	NULL
-MEA	Middle East & North Africa
-MNA	Middle East & North Africa (excluding high income)
-MIC	Middle income
+MEA	Middle East & North Africa	NULL	NULL	NULL
+MNA	Middle East & North Africa (excluding high income)	NULL	NULL	NULL
+MIC	Middle income	NULL	NULL	NULL
 MDA	Moldova	Europe	20	0	20
-MCO	Principality of Monaco	Europe
+MCO	Principality of Monaco	Europe	NULL	NULL	NULL
 MNG	Mongolia	Asia	15	0	15
 MNE	Montenegro	Europe	21	NULL	NULL
 MAR	Morocco	Africa	15	13	25
@@ -158,15 +158,15 @@ NAM	Namibia	Africa	20	NULL	NULL
 NRU	Nauru	Oceania	0	NULL	NULL
 NPL	Nepal	Asia	15	13	28
 NLD	Netherlands	Europe	20	8	28
-NCL	New Caledonia	Oceania
+NCL	New Caledonia	Oceania	NULL	NULL	NULL
 NZL	New Zealand	Oceania	20	11	31
 NIC	Nicaragua	North America	11	9	20
 NER	Niger	Africa	22	12	34
 NGA	Nigeria	Africa	5	NULL	NULL
-NAC	North America
-MNP	Northern Mariana Islands	Oceania
+NAC	North America	NULL	NULL	NULL
+MNP	Northern Mariana Islands	Oceania	NULL	NULL	NULL
 NOR	Norway	Europe	25	10	35
-OED	OECD members
+OED	OECD members	NULL	NULL	NULL
 OMN	Oman	Asia	22	9	31
 PAK	Pakistan	Asia	14	15	29
 PLW	Palau	Oceania	0	NULL	NULL
@@ -191,28 +191,28 @@ SRB	Serbia	Europe	20	11	31
 SYC	Seychelles	Africa	21	13	34
 SLE	Sierra Leone	Africa	18	NULL	NULL
 SGP	Singapore	Asia	7	11	18
-SXM	Sint Maarten	North America
+SXM	Sint Maarten	North America	NULL	NULL	NULL
 SVK	Slovakia	Europe	25	15	40
 SVN	Slovenia	Europe	20	13	33
 SLB	Solomon Islands	Oceania	15	0	15
 SOM	Somalia	Africa	13	9	22
 ZAF	South Africa	Africa	15	12	27
-SAS	South Asia
+SAS	South Asia	NULL	NULL	NULL
 SSD	South Sudan	Africa	20	12	32
 ESP	Spain	Europe	22	11	33
 LKA	Sri Lanka	Asia	20	20	40
 KNA	Saint Kitts and Nevis	North America	12	NULL	NULL
 LCA	Saint Lucia	North America	14	13	27
-MAF	Saint Martin	North America
+MAF	Saint Martin	North America	NULL	NULL	NULL
 VCT	Saint Vincent and the Grenadines	North America	16	NULL	NULL
-SSF	Sub-Saharan Africa
-SSA	Sub-Saharan Africa (excluding high income)
+SSF	Sub-Saharan Africa	NULL	NULL	NULL
+SSA	Sub-Saharan Africa (excluding high income)	NULL	NULL	NULL
 SDN	Sudan	Africa	20	NULL	NULL
 SUR	Suriname	South America	12	18	30
 SWE	Sweden	Europe	25	9	34
 CHE	Switzerland	Europe	20	7	27
 SYR	Syria	Asia	24	13	37
-TJK	Tajikistan	Asia
+TJK	Tajikistan	Asia	NULL	NULL	NULL
 TZA	Tanzania	Africa	20	17	37
 THA	Thailand	Asia	6	13	19
 TLS	East Timor	Asia	12	NULL	NULL
@@ -221,23 +221,23 @@ TON	Tonga	Oceania	0	NULL	NULL
 TTO	Trinidad and Tobago	North America	10	14	24
 TUN	Tunisia	Africa	10	6	16
 TUR	Turkey	Asia	12	14.5	26.5
-TKM	Turkmenistan	Asia
-TCA	Turks and Caicos Islands	North America
-TUV	Tuvalu	Oceania
+TKM	Turkmenistan	Asia	NULL	NULL	NULL
+TCA	Turks and Caicos Islands	North America	NULL	NULL	NULL
+TUV	Tuvalu	Oceania	NULL	NULL	NULL
 UGA	Uganda	Africa	15	13	28
 UKR	Ukraine	Europe	24	13	37
 ARE	United Arab Emirates	Asia	30	10	40
 GBR	United Kingdom	Europe	20	8	28
 USA	United States	North America	0	0	0
-UMC	Upper middle income
+UMC	Upper middle income	NULL	NULL	NULL
 URY	Uruguay	South America	20	5	25
 UZB	Uzbekistan	Asia	15	NULL	NULL
 VUT	Vanuatu	Oceania	15	0	15
 VEN	Venezuela	South America	15	NULL	NULL
 VNM	Vietnam	Asia	12	11	23
-VIR	Virgin Islands	North America
+VIR	Virgin Islands	North America	NULL	NULL	NULL
 PSE	Palestine	Asia	21	12	33
-WLD	World
+WLD	World	NULL	NULL	NULL
 YEM	Yemen	Asia	22	15	37
 ZMB	Zambia	Africa	20	11	31
 ZWE	Zimbabwe	Africa	22	11	33
