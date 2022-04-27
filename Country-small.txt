@@ -1,0 +1,21 @@
+ARE	United Arab Emirates	Asia	30	10	40
+NGA	Nigeria	Africa	5	NA	NA
+USA	United States	North America	0	0	0
+CHN	China	Asia	5	11	16
+ECA	Europe & Central Asia (excluding high income)	NA	NA	NA	NA
+PHL	Philippines	Asia	5	12	17
+MEX	Mexico	North America	6	7	13
+TTO	Trinidad and Tobago	North America	10	14	24
+GBR	United Kingdom	Europe	20	8	28
+SVK	Slovakia	Europe	25	15	40
+ECU	Ecuador	South America	11	12	23
+PAN	Panama	North America	30	10	40
+EGY	Egypt	Africa	21	13	34
+AUT	Austria	Europe	25	13	38
+MNG	Mongolia	Asia	15	0	15
+UGA	Uganda	Africa	15	13	28
+IDN	Indonesia	Asia	12	15	27
+KAZ	Kazakhstan	Asia	24	16	40
+ZWE	Zimbabwe	Africa	22	11	33
+LUX	Luxembourg	Europe	26	11	37
+CZE	Czechia	Europe	20	13	33

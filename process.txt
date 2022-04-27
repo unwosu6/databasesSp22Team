@@ -1,0 +1,65 @@
+Joanna Bi jbi9
+Udochukwu Nwosu unwosu6
+
+The order the process is written is important, as the .R code uses the output from the .py code. 
+Choice to use both python and R were due to different preferences between partners. 
+
+-----AnnualCountryStats.txt-----
+Downloaded from https://www.worlddata.info/countrycodes.php (a table of country names and codes) and name it 'countryAndCodes.txt'
+
+Downloaded from https://databank.worldbank.org/reports.aspx?source=jobs# as Tabbed TXT and name the data file 'annualcountrylifesatis.txt'
+to download: select, all countries, all times, and select the following Series: 
+  - Individuals using the Internet (% of population)
+  - GDP per capita (constant 2005 US$)
+  - Population, total
+  - Fertility rate, total (births per woman)
+Running country.py this file will output AnnualCountryStats.txt
+
+Downloaded life satisfaction from https://ourworldindata.org/happiness-and-life-satisfaction as a .csv file, 'happiness.csv'
+In sp22_db_cleanup.R:
+Cleaned up AnnualCountryStats.txt from country.py and added lifeSatisfaction attribute.
+Merged lifeSatisfaction with AnnualCountryStats.txt by countryCode and year, excluded happiness values that do not have an existing countryCode/year in the .txt file. countryCode/year in the .txt file that don't have a happiness value have NA.
+Convert ".." values to NA. 
+Convert column classes appropriately
+
+-----AnnualDemographicStats.txt------
+Download from https://databank.worldbank.org/reports.aspx?source=jobs# as Tabbed TXT and name the data file 'textAnnDemoStatsMale.txt'
+to download: select, all countries, all times, and select the following Series: 
+  - Labor force participation rate, male (% of male population ages 15+) (modeled ILO estimate)
+  - Labor force with basic education, male (% of male working-age population with basic education)
+  - Life expectancy at birth, male (years)
+  - Literacy rate, adult male (% of males ages 15 and above)
+  - Labor force with advanced education, male (% of male working-age population with advanced education)
+
+Download from https://databank.worldbank.org/reports.aspx?source=jobs# as Tabbed TXT and name the data file 'textAnnDemoStatsFemale.txt'
+to download: select, all countries, all times, and select the following Series: 
+  - Labor force participation rate, female (% of female population ages 15+) (modeled ILO estimate)
+  - Labor force with advanced education, female (% of female working-age population with advanced education)
+  - Labor force with basic education, female (% of female working-age population with basic education)
+  - Life expectancy at birth, female (years)
+  - Literacy rate, adult female (% of females ages 15 and above)
+  
+Run demographic.py this file will output AnnualDemographicStats.txt
+
+In sp22_db_cleanup.R
+Cleaned up AnnualDemographicStats.txt output from demographic.py by replacing ".." with NA and changing attribute classes.
+
+-----Country.txt-----
+Downloaded table from https://en.wikipedia.org/wiki/List_of_minimum_annual_leave_by_country and named it 'vacation-days.txt' after saving the csv file as a tabbed txt file
+Downloaded table from https://statisticstimes.com/geography/countries-by-continents.php and save it as a tabbed txt file named continent.txt
+Run country.py and this file will output Country.txt
+
+In sp22_db_cleanup.R
+Cleaned up by reclassing attributes, replacing NULL with NA (just for consistency)
+Added countries that were in WorksIn.txt, made sure all countries had code and country name and continent
+
+-----WorksIn.txt-----
+Downloaded from https://ilostat.ilo.org/topics/wages/, "Mean nominal monthly earnings of employees by sex and occupation | Annual" as an excel file
+Manually deleted first 5 rows (was just notes), and columns titles “Notes” “2017 PPP $” “Local currency” “Source” in excel, saved as monthlywages.csv
+Downloaded from https://gist.github.com/tadast/8827699, country codes as countryCode.csv
+In sp22_db_cleanup.R
+Cleaned up, added country codes
+
+-----Demographic.txt-----
+Manually made one column with Female and Male
+sp22_db_cleanup.R

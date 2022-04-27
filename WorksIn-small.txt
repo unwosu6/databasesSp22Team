@@ -1,0 +1,16 @@
+sectorID	countryCode	year	sex	monthlyEarnings
+8. Plant and machine operators, and assemblers	SVK	2019	Male	1302
+9. Elementary occupations	ECU	2015	Male	317
+2. Professionals	PAN	2017	Female	1361
+9. Elementary occupations	EGY	2020	Female	113
+5. Service and sales workers	GBR	2011	Female	1605
+1. Managers	AUT	2011	Male	8584
+7. Craft and related trades workers	AUT	2019	Male	3531
+6. Skilled agricultural, forestry and fishery workers	MNG	2012	Female	172
+1. Managers	MNG	2019	Male	473
+0. Armed forces occupations	UGA	2012	Male	162
+1. Managers	IDN	2017	Female	487
+8. Plant and machine operators, and assemblers	KAZ	2020	Male	574
+9. Elementary occupations	ZWE	2014	Male	NA
+9. Elementary occupations	LUX	2018	Female	1758
+6. Skilled agricultural, forestry and fishery workers	CZE	2017	Female	873
