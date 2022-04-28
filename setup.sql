@@ -24,7 +24,7 @@ CREATE TABLE AnnualCountryStats(
 	population BIGINT,
 	fertRate FLOAT,
 	lifeSatisfaction FLOAT,
-	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
+	FOREIGN KEY (countryCode) REFERENCES Country(countryCode) ON DELETE CASCADE ON UPDATE CASCADE,
 	CHECK (pctUsingInternet >= 0 AND pctUsingInternet <= 100)
 );
 
@@ -38,8 +38,8 @@ CREATE TABLE AnnualDemoStats(
 	lifeExpect INT,
 	literacyRate FLOAT,
 	PRIMARY KEY (countryCode, year, sex),
-	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
-	FOREIGN KEY (sex) REFERENCES Demographic(sex),
+	FOREIGN KEY (countryCode) REFERENCES Country(countryCode) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (sex) REFERENCES Demographic(sex) ON DELETE CASCADE ON UPDATE CASCADE,
 	CHECK (pctAdvancedEdu >= 0 AND pctAdvancedEdu <= 100),
 	CHECK (pctBasicEdu >= 0 AND pctBasicEdu <= 100),
 	CHECK (literacyRate >= 0 AND literacyRate <= 100)
@@ -52,8 +52,8 @@ CREATE TABLE WorksIn(
 	sex VARCHAR(10), 
 	monthlyEarnings FLOAT,
 	PRIMARY KEY (sectorID, countryCode, year, sex),
-	FOREIGN KEY (countryCode) REFERENCES Country(countryCode),
-	FOREIGN KEY (sex) REFERENCES Demographic(sex)
+	FOREIGN KEY (countryCode) REFERENCES Country(countryCode) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (sex) REFERENCES Demographic(sex) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 LOAD DATA LOCAL INFILE 'Demographic.txt'
