@@ -1,7 +1,7 @@
 Joanna Bi jbi9
 Udochukwu Nwosu unwosu6
 
-No shifts in topic direction was made and no additional data was included as compared to Phase C. We’ve not discussed anything during those phase with our mentor. 
+No shifts in topic direction was made and no additional data was included as compared to Phase C. We’ve not discussed anything during those phase with our mentor. We did make changes to setup.sql, because we forgot to include cascading. 
 
 There were changes to the topic direction in regards to the questions from Phase A. Initially we had many questions about mental health and level of depression, but have since consolidated those two ideas into "life satisfaction."
 
