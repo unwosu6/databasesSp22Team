@@ -1,10 +1,12 @@
 -- Joanna Bi jbi9
 -- Udochuwku Nwosu unwosu6
 
--- 1: What is the (most updated)  level of life satisfaction for countries with the top 30 GDPs, grouped by continent?
-SELECT ACS.countryCode, ACS.lifeSatisfaction
-FROM AnnualCountryStats AS ACS
-WHERE YEAR = (SELECT max(Year) FROM AnnualCountryStats)
+-- 1: In 2016 what was the average level of life satisfaction for countries with the top 3 GDPs on the continent of Africa?
+SELECT C.continent, avg(ACS.lifeSatisfaction) AS avgLifeSatisfactionOfTop3GDP
+FROM AnnualCountryStats AS ACS JOIN Country AS C 
+ON ACS.countryCode = C.countryCode
+WHERE ACS.year = 2016 AND C.continent = 'Africa' 
+ORDER BY ACS.GDPperCap DESC LIMIT 3;
 
 -- 2: What is the most well paid job sector in 2016 for each country from most well paid to least well paid?
 SELECT W.countryCode, W.sectorID, W.sex, W.monthlyEarnings
@@ -123,6 +125,11 @@ FROM AnnualCountryStats
 WHERE year = 2016 AND pctUsingInternet IS NOT NULL
 ORDER BY pctUsingInternet ASC LIMIT 30)
 SELECT * FROM Bot30Internet;
+WITH Bot30Internet AS (
+SELECT countryCode, pctUsingInternet AS percentPopulationWithInternetAccess, GDPperCap
+FROM AnnualCountryStats
+WHERE year = 2016 AND pctUsingInternet IS NOT NULL
+ORDER BY pctUsingInternet ASC LIMIT 30)
 SELECT avg(GDPperCap) AS averageGDPofLeastInternetAccess FROM Bot30Internet;
 
 -- 15: Which countries have the highest population in their continent and what is their fertility rate and continent?
