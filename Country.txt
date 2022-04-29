@@ -68,7 +68,7 @@ ERI	Eritrea	Africa	12	NA	NA
 ESP	Spain	Europe	22	11	33
 EST	Estonia	Europe	28	11	39
 ETH	Ethiopia	Africa	12	13	25
-EUU	European Union	20	0	20	NA
+EUU	European Union	Europe	20	0	20
 FIN	Finland	Europe	25	11	36
 FJI	Fiji	Oceania	10	12	22
 FRA	France	Europe	25	11	36
@@ -238,7 +238,7 @@ VNM	Vietnam	Asia	12	11	23
 VUT	Vanuatu	Oceania	15	0	15
 WLD	World	NA	NA	NA	NA
 WSM	Samoa	Oceania	10	11	21
-XKX	Kosovo	20	12	32	NA
+XKX	Kosovo	Europe	20	12	32
 YEM	Yemen	Asia	22	15	37
 ZAF	South Africa	Africa	15	12	27
 ZMB	Zambia	Africa	20	11	31
