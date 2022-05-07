@@ -62,12 +62,17 @@
 		COUNTRY: 
 		<select name="country">  
 			<option value="">--- choose a country ---</option>}
-			<option value="Africa">Africa</option>
-			<option value="Asia">Asia</option>  
-			<option value="North America">North America</option>  
-			<option value="South America">South America</option>  
-			<option value="Europe">Europe</option>  
-			<option value="Oceania">Oceania</option>  
+			<?php
+				$query = "SELECT * FROM Country";
+				$results=mysqli_query($conn, $query);
+				//loop
+				foreach ($results as $country){
+            ?>
+            <option value="<?php echo $country["countryCode"];?>"><?php echo $country["countryName"];?></option>
+			<?php
+				}
+			?>
+ 
 		</select>
 		YEAR: <input type="text" name="year"> <br/>
 		<input type="submit">
