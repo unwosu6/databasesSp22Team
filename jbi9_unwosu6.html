@@ -3,17 +3,28 @@
 <html>
    <body>
 
-	<!-- (a) -->
-	<h2> Show Raw Scores</h2>
-	<form action="HW4_ShowRawScores.php" method="post">
-		SID: <input type="text" name="SID"> <br/>
+	<!-- (1) -->
+	<h2> In [YEAR] what was the average level of life satisfaction for countries with the top 3 GDPs on the continent of [CONTINENT] </h2>
+	<form action="Q1.php" method="post">
+		YEAR: <input type="text" name="year"> <br/>
+		CONTINENT: 
+		<select name="continent">  
+			<option value="">--- choose a continent ---</option>}
+			<option value="Africa">Africa</option>
+			<option value="Asia">Asia</option>  
+			<option value="North America">North America</option>  
+			<option value="South America">South America</option>  
+			<option value="Europe">Europe</option>  
+			<option value="Oceania">Oceania</option>  
+		</select>
+		<br/>
 		<input type="submit">
 	</form>
 	<br/><br/>
 
-	<!-- (b) -->
+	<!-- (2) -->
 	<h2> Show Percentages and Weighted Averages</h2>
-	<form action="HW4_ShowPercentages.php" method="post">
+	<form action="Q2.php" method="post">
 		SID: <input type="text" name="SID"> <br/>
 		<input type="submit">
 	</form>
