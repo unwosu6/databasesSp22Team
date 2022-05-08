@@ -58,21 +58,30 @@
 			<option value="">--- choose a direction ---</option>}
 			<option value="lower">Lower</option>
 			<option value="higher">Higer</option>   
-		</select>
+		</select><br/>
 		COUNTRY: 
 		<select name="country">  
-			<option value="">--- choose a country ---</option>}
+			<option value="">--- choose a country ---</option>
 			<?php
-				$query = "SELECT * FROM Country";
-				$results=mysqli_query($conn, $query);
-				//loop
-				foreach ($results as $country){
-            ?>
-            <option value="<?php echo $country["countryCode"];?>"><?php echo $country["countryName"];?></option>
-			<?php
+				mysql_connect("localhost","root","");
+				mysql_select_db($dbname);
+				$select=$dbname;
+				if(isset($select)&&$select!=""){
+					$select=$_POST['NEW'];
 				}
 			?>
- 
+			<?php
+				$list=mysql_query("SELECT * FROM Country");
+				while($row_list=mysql_fetch_assoc($list)){
+            ?>
+			<option value="<?php echo $row_list['c_id']; ?>">
+				<?php if($row_list['countryCode']==$select){ echo "selected"; } ?>   
+				<?php echo $row_list['countryName']; ?>  
+			</option>
+			<?php
+			   }
+			?>
+			<option value="higher">Higer</option> 
 		</select>
 		YEAR: <input type="text" name="year"> <br/>
 		<input type="submit">
