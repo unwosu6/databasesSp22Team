@@ -26,6 +26,12 @@ GROUP BY continent;
 
 
 -- 4: Given a range of “happiness” levels (in this case between 5 and 9,) what is the average number of days of paid leave for countries within the range?
+SELECT C.countryName, C.paidLeaveTotal, ACS.lifeSatisfaction
+FROM Country AS C JOIN AnnualCountryStats AS ACS
+ON C.countryCode = ACS.countryCode
+WHERE ACS.year = 2016 AND ACS.lifeSatisfaction > 5 AND ACS.lifeSatisfaction < 9
+ORDER BY C.paidLeaveTotal DESC;
+
 SELECT avg(C.paidLeaveTotal) AS averagePaidLeave
 FROM Country AS C JOIN AnnualCountryStats AS ACS
 ON C.countryCode = ACS.countryCode
@@ -67,7 +73,7 @@ GROUP BY ADS.year;
 WITH BotThirty AS (
 SELECT ADS.countryCode, ACS.lifeSatisfaction
 FROM AnnualDemoStats AS ADS JOIN AnnualCountryStats AS ACS 
-ON ADS.year = ADS.year AND ADS.countryCode = ACS.countryCode 
+ON ADS.year = ACS.year AND ADS.countryCode = ACS.countryCode 
 WHERE ACS.year = 2016 AND ADS.sex = 'Male' AND ACS.lifeSatisfaction IS NOT NULL
 ORDER BY ADS.lifeExpect ASC LIMIT 30)
 SELECT avg(lifeSatisfaction)
@@ -108,12 +114,12 @@ WHERE payDiff = (SELECT min(payDiff) FROM Diff);
 WITH GDP AS (
 SELECT countryCode
 FROM AnnualCountryStats
-WHERE GDPperCap IS NOT NULL
+WHERE GDPperCap IS NOT NULL AND year = 2016
 ORDER BY GDPperCap DESC LIMIT 50),
 LifeSat AS (
 SELECT countryCode
 FROM AnnualCountryStats
-WHERE lifeSatisfaction IS NOT NULL
+WHERE lifeSatisfaction IS NOT NULL AND year = 2016
 ORDER BY lifeSatisfaction DESC LIMIT 50)
 SELECT count(*)
 FROM GDP JOIN LifeSat ON LifeSat.countryCode = GDP.countryCode;

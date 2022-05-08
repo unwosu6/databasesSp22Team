@@ -11,19 +11,19 @@
 	$upper = $_POST['upper'];
 
 	// echo some basic header info onto the page
-	echo "<h2>In ".$year." what was the life satisfaction for countries with the top 3 GDPs on the continent of ".$continent."? </h2><br>";
+	echo "<h2>What is the average number of days of paid leave for countries with a life satisfaction above ".$lower." and below ".$upper."? </h2><br>";
 
 	function displayItems($res) {
 		if ($res->num_rows == 0) {
 			echo "No results found with specified inputs";
 		} else {
 			echo "<table border=\"1px solid black\">";
-			echo "<tr><th> Country Name </th> <th> GDP per Capita </th> ";
+			echo "<tr><th> Country Name </th> <th> Total Number of Days of Paid Leave </th> ";
 			echo "<th> Life Satisfaction </th>";
 			while (null !== ($row = $res->fetch_assoc())) {
 				echo "<tr>";
 				echo "<td>".$row['countryName']."</td>";
-				echo "<td>".$row['GDPperCap']."</td>";
+				echo "<td>".$row['paidLeaveTotal']."</td>";
 				echo "<td>".$row['lifeSatisfaction']."</td>";
 				echo "</tr>";
 			}
@@ -33,11 +33,34 @@
 	}
 
 	if ($stmt = $conn->prepare(
-		"SELECT C.countryName, ACS.GDPperCap, ACS.lifeSatisfaction ".
-		"FROM AnnualCountryStats AS ACS JOIN Country AS C ".
-		"ON ACS.countryCode = C.countryCode ".
-		"WHERE ACS.year = ? AND C.continent = ? AND ACS.lifeSatisfaction IS NOT NULL ".
-		"ORDER BY ACS.GDPperCap DESC LIMIT 3;"
+		"SELECT avg(C.paidLeaveTotal) AS averagePaidLeave ".
+		"FROM Country AS C JOIN AnnualCountryStats AS ACS ".
+		"ON C.countryCode = ACS.countryCode ".
+		"WHERE ACS.year = 2016 AND ACS.lifeSatisfaction > ? AND ACS.lifeSatisfaction < ?;"
+	)) {	
+		$stmt->bind_param('dd', $lower, $upper);
+
+		if ($stmt->execute()) {
+			$result = $stmt->get_result();
+			$row = $result->fetch_assoc();
+			echo "The average number of days: $row['averagePaidLeave'];"
+			$result->free_result();
+		} else {
+			echo "Execution failed";
+		}
+		echo "<br><br>";
+
+	} else {
+		$error = $conn->errno . ' ' . $conn->error;
+		echo $error;
+	}
+
+	if ($stmt = $conn->prepare(
+		"SELECT C.countryName, C.paidLeaveTotal, ACS.lifeSatisfaction ".
+		"FROM Country AS C JOIN AnnualCountryStats AS ACS ".
+		"ON C.countryCode = ACS.countryCode ".
+		"WHERE ACS.year = 2016 AND ACS.lifeSatisfaction > ? AND ACS.lifeSatisfaction < ?".
+		"ORDER BY C.paidLeaveTotal DESC;"
 	)) {	
 		$stmt->bind_param('dd', $lower, $upper);
 
