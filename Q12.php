@@ -31,7 +31,7 @@
     $dataPoints = array();
 
 	//we'll soon see how to upgrade our queries so they aren't plain strings
-	$sql = "SELECT C.countryName, W.monthlyEarnings AS femalePay, W2.monthlyEarnings AS malePay, abs(W.monthlyEarnings - W2.monthlyEarnings) AS payDiff
+	$sql = "SELECT C.countryName, W.year, W.monthlyEarnings AS femalePay, W2.monthlyEarnings AS malePay, abs(W.monthlyEarnings - W2.monthlyEarnings) AS payDiff
     FROM WorksIn AS W JOIN WorksIn AS W2 JOIN Country AS C
     ON W.sex < W2.sex AND W.sectorId = W2.sectorId AND W.year = W2.year AND W.countryCode = W2.countryCode AND C.countryCode = W.countryCode
     WHERE W.sectorId = 'Total' AND W.countryCode = 'USA';";
