@@ -42,8 +42,11 @@
 
 		if ($stmt->execute()) {
 			$result = $stmt->get_result();
-			$row = $result->fetch_assoc();
-			echo "The average number of days: ".$row['averagePaidLeave']."<br>";
+			if ($result->num_rows != 0) {
+				$row = $result->fetch_assoc();
+				echo "The average number of days: ".$row['averagePaidLeave']."<br>";
+			}
+			
 			$result->free_result();
 		} else {
 			echo "Execution failed";
