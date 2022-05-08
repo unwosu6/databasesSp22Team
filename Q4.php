@@ -7,11 +7,12 @@
 	ini_set('error_reporting', E_ALL);
 	ini_set('display_errors', true);
 	// collect the posted value in a variable
+	$year = $_POST['year'];
 	$lower = $_POST['lower'];
 	$upper = $_POST['upper'];
 
 	// echo some basic header info onto the page
-	echo "<h2>What is the average number of days of paid leave for countries with a life satisfaction above ".$lower." and below ".$upper."? </h2><br>";
+	echo "<h2>In ".$year.", what is the average number of days of paid leave for countries with a life satisfaction above ".$lower." and below ".$upper."? </h2><br>";
 
 	function displayItems($res) {
 		if ($res->num_rows == 0) {
@@ -36,9 +37,9 @@
 		"SELECT avg(C.paidLeaveTotal) AS averagePaidLeave ".
 		"FROM Country AS C JOIN AnnualCountryStats AS ACS ".
 		"ON C.countryCode = ACS.countryCode ".
-		"WHERE ACS.year = 2016 AND ACS.lifeSatisfaction > ? AND ACS.lifeSatisfaction < ?;"
+		"WHERE ACS.year = ? AND ACS.lifeSatisfaction > ? AND ACS.lifeSatisfaction < ?;"
 	)) {	
-		$stmt->bind_param('dd', $lower, $upper);
+		$stmt->bind_param('ddd', $year, $lower, $upper);
 
 		if ($stmt->execute()) {
 			$result = $stmt->get_result();
@@ -59,13 +60,13 @@
 	}
 
 	if ($stmt = $conn->prepare(
-		"SELECT C.countryName, C.paidLeaveTotal, ACS.lifeSatisfaction ".
-		"FROM Country AS C JOIN AnnualCountryStats AS ACS ".
-		"ON C.countryCode = ACS.countryCode ".
-		"WHERE ACS.year = 2016 AND ACS.lifeSatisfaction > ? AND ACS.lifeSatisfaction < ?".
-		"ORDER BY C.paidLeaveTotal DESC;"
+		"SELECT C.countryName, C.paidLeaveTotal, ACS.lifeSatisfaction
+		FROM Country AS C JOIN AnnualCountryStats AS ACS
+		ON C.countryCode = ACS.countryCode
+		WHERE ACS.year = ? AND ACS.lifeSatisfaction > ? AND ACS.lifeSatisfaction < ?
+		ORDER BY C.paidLeaveTotal DESC;"
 	)) {	
-		$stmt->bind_param('dd', $lower, $upper);
+		$stmt->bind_param('ddd', $year, $lower, $upper);
 
 		if ($stmt->execute()) {
 			$result = $stmt->get_result();
