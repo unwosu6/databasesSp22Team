@@ -9,7 +9,7 @@
 
 	<!-- (1) -->
 	<h2> In [YEAR] what was the average level of life satisfaction for countries with the top 3 GDPs on the continent of [CONTINENT]?</h2>
-	<form action="<?php $_SERVER['PHP_SELF']?>" method="post">
+	<form action="Q1.php" method="post">
 		YEAR: <input type="text" name="year"> <br/>
 		CONTINENT: 
 		<select name="continent">  
@@ -52,7 +52,7 @@
 
 	<!-- (5/6) -->
 	<h2> How many countries from each contient have a [DIRECTION: LOWER/HIGHER] life satisfaction than [COUNTRY] in [YEAR]? (Visual)</h2>
-	<form action="Q56.php" method="post">
+	<form action="<?php $_SERVER['PHP_SELF']?>" method="post">
 		DIRECTION:
 		<select name="direction">  
 			<option value="">--- choose a direction ---</option>}
