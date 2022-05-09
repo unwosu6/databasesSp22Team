@@ -13,48 +13,49 @@
 
     $factorWord1 = "NONE GIVEN";
 
-    if ($factor1 == "laborForcePartipation") {
-        $factorWord1 = "Labor Force Participation Rate";
-    } elseif ($factor1 == "pctAdvancedEdu") {
-        $factorWord1 = "Percent of the Population with Basic Education";
-    } elseif ($factor1 == "pctBasicEdu") {
-        $factorWord1 = "Percent of the Population with Basic Education";
-    } elseif ($factor1 == "lifeExpect") {
-        $factorWord1 = "Life Expectancy";
-    } elseif ($factor1 == "literacyRate") {
-        $factorWord1 = "Literacy Rate";
+    if ($factor1 == "pctUsingInternet") {
+        $factorWord1 = "Percent of the Population Using the Internet";
+    } elseif ($factor1 == "lifeSatisfaction") {
+        $factorWord1 = "Life Satisfaction";
+    } elseif ($factor1 == "GDPperCap") {
+        $factorWord1 = "GDP Per Capita";
+    } elseif ($factor1 == "population") {
+        $factorWord1 = "Population";
+    } elseif ($factor1 == "fertRate") {
+        $factorWord1 = "Fertility Rate";
     }
 
     $factorWord2 = "NONE GIVEN";
 
-    if ($factor2 == "laborForcePartipation") {
-        $factorWord2 = "Labor Force Participation Rate";
-    } elseif ($factor2 == "pctAdvancedEdu") {
-        $factorWord2 = "Percent of the Population with Basic Education";
-    } elseif ($factor2 == "pctBasicEdu") {
-        $factorWord2 = "Percent of the Population with Basic Education";
-    } elseif ($factor2 == "lifeExpect") {
-        $factorWord2 = "Life Expectancy";
-    } elseif ($factor2 == "literacyRate") {
-        $factorWord2 = "Literacy Rate";
+    if ($factor2 == "pctUsingInternet") {
+        $factorWord2 = "Percent of the Population Using the Internet";
+    } elseif ($factor2 == "lifeSatisfaction") {
+        $factorWord2 = "Life Satisfaction";
+    } elseif ($factor2 == "GDPperCap") {
+        $factorWord2 = "GDP Per Capita";
+    } elseif ($factor2 == "population") {
+        $factorWord2 = "Population";
+    } elseif ($factor2 == "fertRate") {
+        $factorWord2 = "Fertility Rate";
     }
 
 	// echo some basic header info onto the page
 	echo "<h2>In ".$year.", which countries have the highest ".$factorWord1." in their continent and what is their ".$factorWord2."?</h2><br>";
 
 	function displayItems($res) {
+		global $year, $factorWord1, $factorWord2;
 		if ($res->num_rows == 0) {
 			echo "No results found with specified inputs";
 		} else {
 			echo "<table border=\"1px solid black\">";
-			echo "<tr><th> Country Name </th> <th> Job Sector </th> ";
-			echo "<th> Monthly Earnings </th>";
+			echo "<tr><th> Country Name </th> <th> Continent </th> ";
+			echo "<th> ".$factorWord1." </th> <th> ".$factorWord2." </th>";
 			while (null !== ($row = $res->fetch_assoc())) {
 				echo "<tr>";
-				echo "<td>".$row['countryCode']."</td>";
+				echo "<td>".$row['countryName']."</td>";
                 echo "<td>".$row['continent']."</td>";
-				echo "<td>".$row[$factor1]."</td>";
-				echo "<td>".$row[$factor2]."</td>";
+				echo "<td>".$row['factor1']."</td>";
+				echo "<td>".$row['factor2']."</td>";
 				echo "</tr>";
 			}
 	
@@ -64,17 +65,17 @@
 
 	if ($stmt = $conn->prepare(
 		"WITH AnnualCountryStatsWithContinent AS(
-            SELECT ACS.countryCode, ACS.?, ACS.?, ACS.year, C.continent
+            SELECT ACS.countryCode, C.countryName, ACS.".$factor1." AS factor1, ACS.".$factor2." AS factor2, ACS.year, C.continent
             FROM AnnualCountryStats AS ACS JOIN Country AS C ON ACS.countryCode = C.countryCode)
-        SELECT ACS.countryCode, ACS.continent, ACS.?, ACS.? 
+        SELECT ACS.countryCode, ACS.countryName, ACS.continent, ACS.factor1, ACS.factor2 
         FROM AnnualCountryStatsWithContinent AS ACS, AnnualCountryStatsWithContinent AS ACSmax
         WHERE ACS.year = ? AND ACS.year = ACSmax.year AND ACS.continent = ACSmax.continent
-        GROUP BY ACS.continent, ACS.countryCode, ACS.?, ACS.?
-        HAVING ACS.? = max(ACSmax.?)
-        ORDER BY ACS.? DESC;"
+        GROUP BY ACS.continent, ACS.countryCode, ACS.factor1, ACS.factor2
+        HAVING ACS.factor1 = max(ACSmax.factor1)
+        ORDER BY ACS.factor1 DESC;"
 	)) {	
 
-		$stmt->bind_param('ssssdsssss', $factor1, $factor2, $factor1, $factor2, $year, $factor1, $factor2, $factor1, $factor1, $factor1);
+		$stmt->bind_param('d',  $year);
 
 		if ($stmt->execute()) {
 			$result = $stmt->get_result();

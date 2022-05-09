@@ -245,7 +245,7 @@
 			<option value="population">Population</option>  
 			<option value="fertRate">Fertility Rate</option>  
 			<option value="lifeSatisfaction">Life Satisfaction</option>
-		</select>
+		</select><br/>
 		FACTOR 2:
 		<select name="factor2">  
 			<option value="">--- choose a factor ---</option>}
@@ -254,7 +254,7 @@
 			<option value="population">Population</option>  
 			<option value="fertRate">Fertility Rate</option>  
 			<option value="lifeSatisfaction">Life Satisfaction</option>
-		</select>
+		</select><br/>
 		<input type="submit">
 	</form>
 	<br/><br/>
