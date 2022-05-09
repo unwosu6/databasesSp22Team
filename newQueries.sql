@@ -76,14 +76,23 @@ ON ADS.year = ACS.year AND ADS.countryCode = ACS.countryCode
 WHERE ACS.year < 2016 AND ACS.lifeSatisfaction > 6
 GROUP BY ADS.year;
 
--- 9: What is the average male life satisfaction of the bottom 30 countries with the lowest male life expectancy in 2016?
+-- 9: What is the average life satisfaction of the bottom 10 countries with the lowest male life expectancy in 2016?
 WITH BotThirty AS (
 SELECT ADS.countryCode, ACS.lifeSatisfaction
 FROM AnnualDemoStats AS ADS JOIN AnnualCountryStats AS ACS 
 ON ADS.year = ACS.year AND ADS.countryCode = ACS.countryCode 
-WHERE ACS.year = 2016 AND ADS.sex = 'Male' AND ACS.lifeSatisfaction IS NOT NULL
-ORDER BY ADS.lifeExpect ASC LIMIT 30)
+WHERE ACS.year = 2016 AND ADS.sex = 'Male' AND ACS.lifeSatisfaction IS NOT NULL AND ADS.lifeExpect IS NOT NULL
+ORDER BY ADS.lifeExpect ASC LIMIT 10)
 SELECT avg(lifeSatisfaction)
+FROM BotThirty;
+
+WITH BotThirty AS (
+SELECT ADS.countryCode, C.countryName, ADS.lifeExpect, ACS.lifeSatisfaction
+FROM AnnualDemoStats AS ADS JOIN AnnualCountryStats AS ACS JOIN Country AS C
+ON ADS.year = ACS.year AND ADS.countryCode = ACS.countryCode  AND C.countryCode = ADS.countryCode
+WHERE ACS.year = 2016 AND ADS.sex = 'Male' AND ACS.lifeSatisfaction IS NOT NULL AND ADS.lifeExpect IS NOT NULL
+ORDER BY ADS.lifeExpect ASC LIMIT 10)
+SELECT *
 FROM BotThirty;
 
 
@@ -102,9 +111,10 @@ SecondYear AS (
 SELECT sectorID, monthlyEarnings 
 FROM WorksIn
 WHERE year = '2019' AND sex = 'Female' AND countryCode = 'USA')
-SELECT F.sectorID
+SELECT F.sectorID, S.monthlyEarnings - F.monthlyEarnings AS growth
 FROM FirstYear AS F JOIN SecondYear AS S ON F.sectorID = S.sectorID
-WHERE S.monthlyEarnings - F.monthlyEarnings > 0 AND S.sectorID != 'Total';
+WHERE S.monthlyEarnings - F.monthlyEarnings > 0 AND S.sectorID != 'Total'
+ORDER BY S.monthlyEarnings - F.monthlyEarnings DESC;
 
 
 -- 12: What country has the smallest gap in average monthly earnings between men and women in 2016?
@@ -133,9 +143,22 @@ SELECT countryCode
 FROM AnnualCountryStats
 WHERE lifeSatisfaction IS NOT NULL AND year = 2016
 ORDER BY lifeSatisfaction DESC LIMIT 50)
-SELECT count(*)
+SELECT *
 FROM GDP JOIN LifeSat ON LifeSat.countryCode = GDP.countryCode;
 
+WITH GDP AS (
+SELECT ACS.countryCode, C.countryName, ACS.GDPperCap
+FROM AnnualCountryStats AS ACS JOIN Country AS C ON C.countryCode = ACS.countryCode
+WHERE ACS.GDPperCap IS NOT NULL AND year = 2016
+ORDER BY ACS.GDPperCap DESC LIMIT 50),
+FactorTwo AS (
+SELECT countryCode, lifeSatisfaction AS factor
+FROM AnnualCountryStats
+WHERE lifeSatisfaction IS NOT NULL AND year = 2016
+ORDER BY lifeSatisfaction DESC LIMIT 50)
+SELECT *
+FROM GDP AS G JOIN FactorTwo AS F ON F.countryCode = G.countryCode
+ORDER BY F.factor DESC;
 -- 14: List the 30 countries with the lowest percentage of people using the internet in 2016 and provide an average of their GDP
 WITH Bot30Internet AS (
 SELECT countryCode, pctUsingInternet AS percentPopulationWithInternetAccess, GDPperCap

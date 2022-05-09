@@ -26,15 +26,18 @@
 	echo "<h2>In ".$year.", how many countries are in both the top 50 for ".$factorWord." and GDP per capita?</h2><br>";
 
 	function displayItems($res) {
+		global $factorWord, $year;
 		if ($res->num_rows == 0) {
-			echo "No results found with specified inputs";
+			echo "There were no records found for the year ".$year.".";
 		} else {
 			echo "<table border=\"1px solid black\">";
-			echo "<tr><th> Country Name </th> <th> Job Sector </th> ";
-			echo "<th> Monthly Earnings </th>";
+			echo "<tr><th> Country Name </th> <th> ".$factorWord." </th> ";
+			echo "<th> GDP Per Capita </th>";
 			while (null !== ($row = $res->fetch_assoc())) {
 				echo "<tr>";
-				echo "<td>".$row['numCountry']."</td>";
+				echo "<td>".$row['countryName']."</td>";
+				echo "<td>".$row['factor']."</td>";
+				echo "<td>".$row['GDPperCap']."</td>";
 				echo "</tr>";
 			}
 	
@@ -44,19 +47,20 @@
 
 	if ($stmt = $conn->prepare(
 		"WITH GDP AS (
-            SELECT countryCode
-            FROM AnnualCountryStats
-            WHERE GDPperCap IS NOT NULL AND year = ?
-            ORDER BY GDPperCap DESC LIMIT 50),
+            SELECT ACS.countryCode, C.countryName, ACS.GDPperCap
+            FROM AnnualCountryStats AS ACS JOIN Country AS C ON C.countryCode = ACS.countryCode
+            WHERE ACS.GDPperCap IS NOT NULL AND year = ?
+            ORDER BY ACS.GDPperCap DESC LIMIT 50),
             FactorTwo AS (
-            SELECT countryCode
+            SELECT countryCode, ".$factor." AS factor
             FROM AnnualCountryStats
-            WHERE ? IS NOT NULL AND year = ?
-            ORDER BY ? DESC LIMIT 50)
-            SELECT count(*) AS numCountry
-            FROM GDP JOIN FactorTwo ON FactorTwo.countryCode = GDP.countryCode;"
+            WHERE ".$factor." IS NOT NULL AND year = ?
+            ORDER BY ".$factor." DESC LIMIT 50)
+            SELECT *
+            FROM GDP AS G JOIN FactorTwo AS F ON F.countryCode = G.countryCode
+			ORDER BY F.factor DESC;"
 	)) {	
-		$stmt->bind_param('dsds', $year, $factor, $year, $factor);
+		$stmt->bind_param('dd', $year, $year);
 
 		if ($stmt->execute()) {
 			$result = $stmt->get_result();

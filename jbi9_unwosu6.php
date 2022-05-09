@@ -205,7 +205,6 @@
 	<h2> In [YEAR], how many countries (list them) are in both the top 50 for [FACTOR] and GDP per capita?</h2>
 	<form action="Q13.php" method="post">
 		YEAR: <input type="text" name="year"> <br/>
-		<input type="submit">
 		FACTOR:
 		<select name="factor">  
 			<option value="">--- choose a factor ---</option>}
@@ -213,7 +212,8 @@
 			<option value="lifeSatisfaction">Life Satisfaction</option>  
 			<option value="population">Population</option>  
 			<option value="fertRate">Fertility Rate</option>  
-		</select>
+		</select><br/>
+		<input type="submit">
 	</form>
 	<br/><br/>
 
