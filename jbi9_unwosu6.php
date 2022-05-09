@@ -37,7 +37,7 @@
 	<br/><br/>
 
 	<!-- (4) -->
-	<h2> In [YEAR], what is the average number of days of paid leave for countries with a life satisfaction above [LOWER LIMIT] and below [UPPER LIMIT]?</h2>
+	<h2> In [YEAR], what was the average number of days of paid leave for countries with a life satisfaction above [LOWER LIMIT] and below [UPPER LIMIT]?</h2>
 	<h3> (Life satisfaction is measured on a scale from 0 to 10)</h3>
 	<form action="Q4.php" method="post">
 		YEAR: <input type="text" name="year"> <br/>

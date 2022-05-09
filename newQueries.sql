@@ -32,10 +32,10 @@ ON C.countryCode = ACS.countryCode
 WHERE ACS.year = 2016 AND ACS.lifeSatisfaction > 5 AND ACS.lifeSatisfaction < 9
 ORDER BY C.paidLeaveTotal DESC;
 
-SELECT avg(C.paidLeaveTotal) AS averagePaidLeave
-FROM Country AS C JOIN AnnualCountryStats AS ACS
-ON C.countryCode = ACS.countryCode
-WHERE ACS.year = 2016 AND ACS.lifeSatisfaction > 5 AND ACS.lifeSatisfaction < 9;
+SELECT avg(C.paidLeaveTotal) AS averagePaidLeave 
+FROM Country AS C JOIN AnnualCountryStats AS ACS 
+ON C.countryCode = ACS.countryCode 
+WHERE ACS.year = 4 AND ACS.lifeSatisfaction > 5 AND ACS.lifeSatisfaction < 10 AND C.paidLeaveTotal IS NOT NULL;
 
 -- 5: How many countries had a lower life satisfaction than the United States in 2010?
 WITH lowerLS AS (
