@@ -51,9 +51,8 @@
 		}
 	}
 
-	// echo some basic header info onto the page
 	echo "<h2>How many countries from each contient have a ".$direction." life satisfaction than ".$countryName." in ".$year."?</h2><br>";
-	// echo $sqlCode;
+	// show visual
 	echo "<form action=\"Q56-new.php\" method=\"post\">";
 	echo "<input type=\"hidden\" name=\"direction\" value=\"".$direction."\">";
 	echo "<input type=\"hidden\" name=\"year\" value=\"".$year."\">";

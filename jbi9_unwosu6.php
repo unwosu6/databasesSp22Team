@@ -61,7 +61,7 @@
 			include 'open.php';
 			echo "COUNTRY:"; 
 			echo "<select name=\"country\">";
-			echo "<option value=\"\">Select Country</option>";
+			echo "<option value=\"\">--- choose a country ---</option>";
 			//populate value using php
 			$query = "SELECT * FROM Country;";
 			$results = mysqli_query($conn, $query);
@@ -143,7 +143,7 @@
 			include 'open.php';
 			echo "COUNTRY:"; 
 			echo "<select name=\"country\">";
-			echo "<option value=\"\">Select Country</option>";
+			echo "<option value=\"\">--- choose a country ---</option>";
 			//populate value using php
 			$query = "SELECT * FROM Country;";
 			$results = mysqli_query($conn, $query);
@@ -181,7 +181,7 @@
 			include 'open.php';
 			echo "COUNTRY:"; 
 			echo "<select name=\"country\">";
-			echo "<option value=\"\">Select Country</option>";
+			echo "<option value=\"\">--- choose a country ---</option>";
 			//populate value using php
 			$query = "SELECT * FROM Country;";
 			$results = mysqli_query($conn, $query);
@@ -222,7 +222,7 @@
 			<option value="lifeSatisfaction">Life Satisfaction</option>  
 			<option value="population">Population</option>  
 			<option value="fertRate">Fertility Rate</option>  
-		</select>
+		</select><br/>
 		YEAR: <input type="text" name="year"> <br/>
 		<input type="submit">
 	</form>

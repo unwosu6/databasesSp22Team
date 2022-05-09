@@ -5,9 +5,6 @@
 	//construct an array in which we'll store our data
 	$dataPoints = array();
 
-	//we'll soon see how to upgrade our queries so they aren't plain strings
-	// echo $_SESSION['sqlCode'];
-	// $sql = $_SESSION['sqlCode'];
 	$year = $_POST['year'];
 	$direction = $_POST['direction'];
 	$country = $_POST['country'];

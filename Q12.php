@@ -1,22 +1,5 @@
 <head>
     <title>Q12</title>
-    <script>
-    window.onload = function () { 
-        var chart = new CanvasJS.Chart("chartContainer", {
-            animationEnabled: true,
-            exportEnabled: true,
-            theme: "light1", // "light1", "light2", "dark1", "dark2"
-            title:{
-                text: "Average Pay Gap Over Time"
-            },
-            data: [{
-                type: "line", //change type to column, bar, line, area, pie, etc  
-                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-            }]
-        });
-        chart.render(); 
-    }
-    </script>
 </head>
 <body>
 <?php
@@ -27,6 +10,7 @@
 	ini_set('display_errors', true);
 	// collect the posted value in a variable
 	$year = $_POST['year'];
+	$country = "";
 
     $dataPoints = array();
 
@@ -52,7 +36,6 @@
 			echo "</table>";
 		}
 	}
-    $countryCode = "";
 	if ($stmt = $conn->prepare(
 		"WITH Diff AS (
             SELECT C.countryName, W.countryCode, W.year, W.monthlyEarnings AS femalePay, W2.monthlyEarnings AS malePay, abs(W.monthlyEarnings - W2.monthlyEarnings) AS payDiff
@@ -69,7 +52,7 @@
 			$result = $stmt->get_result();
             if ($result->num_rows != 0) {
 				$row = $result->fetch_assoc();
-                $countryCode = $row['countryCode'];
+                $country = $row['countryCode'];
 				echo "In ".$year.", ".$row['countryName']." had the lowest difference (".$row['payDiff']." USD).<br>";
                 echo "Female monthly pay was ".$row['femalePay']." USD <br>";
                 echo "Male monthly pay was ".$row['malePay']." USD <br>";
@@ -84,39 +67,13 @@
 		$error = $conn->errno . ' ' . $conn->error;
 		echo $error;
 	}
-
-
-    if ($stmt = $conn->prepare(
-		"SELECT C.countryName, W.countryCode, W.year, W.monthlyEarnings AS femalePay, W2.monthlyEarnings AS malePay, abs(W.monthlyEarnings - W2.monthlyEarnings) AS payDiff
-        FROM WorksIn AS W JOIN WorksIn AS W2 JOIN Country AS C
-        ON W.sex < W2.sex AND W.sectorId = W2.sectorId AND W.year = W2.year AND W.countryCode = W2.countryCode AND C.countryCode = W.countryCode
-        WHERE W.sectorId = 'Total' AND W.countryCode = 'USA';"
-	)) {	
-		//$stmt->bind_param('s', $countryCode);
-
-		if ($stmt->execute()) {
-			$result = $stmt->get_result();
-			if ($result->num_rows != 0) {
-                echo $result->num_rows;
-				foreach($result as $row){
-                    array_push($dataPoints, array( "year"=> $row["year"], "femalePay"=> $row["femalePay"]));
-                }
-                echo $dataPoints[0];
-			}
-			$result->free_result();
-		} else {
-			echo "Execution failed";
-		}
-		echo "<br><br>";
-
-	} else {
-		$error = $conn->errno . ' ' . $conn->error;
-		echo $error;
-	}
-
+	// show visual
+	echo "<form action=\"Q12-new.php\" method=\"post\">";
+	echo "<input type=\"hidden\" name=\"country\" value=\"".$country."\">";
+	echo "<input type=\"submit\" value=\"see visual\">";
+	echo "</form>";
+	echo "<br/><br/>";
 
 	$conn->close();
 ?>
-    <div id="chartContainer" style="height: 400px; width: 100%;"></div>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
