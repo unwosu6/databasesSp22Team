@@ -17,7 +17,7 @@
 	function displayItems($res) {
 		if ($res->num_rows == 0) {
 			global $year, $upper, $lower;
-			echo "There is no data for the year ".$year." with countries that have a life satisfaction above ".$lower." and below ".$upper.".";
+			echo "There is no record for the year ".$year." with countries that have a life satisfaction above ".$lower." and below ".$upper.".";
 		} else {
 			echo "<table border=\"1px solid black\">";
 			echo "<tr><th> Country Name </th> <th> Total Number of Days of Paid Leave </th> ";

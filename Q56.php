@@ -1,4 +1,4 @@
-<head><title>Q8</title></head>
+<head><title>Q56</title></head>
 <body>
 <?php
 
@@ -34,7 +34,8 @@
 
     function displayItems($res) {
 		if ($res->num_rows == 0) {
-			echo "No results found with specified inputs";
+			global $year, $direction, $countryName;
+			echo "There is no record of a country in the year ".$year." with a life satisfaction ".$direction." than ".$countryName." in ".$year.".";
 		} else {
 			echo "<table border=\"1px solid black\">";
 			echo "<tr><th> Country Name </th> <th> Continent </th> ";
