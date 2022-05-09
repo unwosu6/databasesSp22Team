@@ -12,19 +12,23 @@
     $sex = $_POST['sex'];
     $country = $_POST['country'];
 
-	// echo some basic header info onto the page
-	echo "<h2>What sectors in ".$country." had a growth in monthly earnings from ".$start." to ".$end." for ".$sex."?</h2><br>";
+	$query = "SELECT countryName FROM Country WHERE countryCode ='".$country."';";
+	$results = mysqli_query($conn, $query);
+	$countryName = $results->fetch_assoc()['countryName'];
+
+	echo "<h2>What sectors in ".$countryName." had a growth in monthly earnings from ".$start." to ".$end." for ".$sex."s?</h2><br>";
 
 	function displayItems($res) {
 		if ($res->num_rows == 0) {
-			echo "No results found with specified inputs";
+			global $start, $end, $countryName;
+			echo "There are no records for monthly earnings in ".$countryName." in either the year ".$start." or ".$end.".";
 		} else {
 			echo "<table border=\"1px solid black\">";
-			echo "<tr><th> Country Name </th> <th> Job Sector </th> ";
-			echo "<th> Monthly Earnings </th>";
+			echo "<tr><th> Job Sector </th> <th> Growth </th> ";
 			while (null !== ($row = $res->fetch_assoc())) {
 				echo "<tr>";
 				echo "<td>".$row['sectorID']."</td>";
+				echo "<td>".$row['growth']."</td>";
 				echo "</tr>";
 			}
 	
@@ -34,16 +38,17 @@
 
 	if ($stmt = $conn->prepare(
 		"WITH FirstYear AS (
-            SELECT sectorID, monthlyEarnings 
-            FROM WorksIn
-            WHERE year = ? AND sex = ? AND countryCode = ?),
-        SecondYear AS (
-            SELECT sectorID, monthlyEarnings 
-            FROM WorksIn
-            WHERE year = ? AND sex = ? AND countryCode = ?)
-        SELECT F.sectorID
-        FROM FirstYear AS F JOIN SecondYear AS S ON F.sectorID = S.sectorID
-        WHERE S.monthlyEarnings - F.monthlyEarnings > 0 AND S.sectorID != 'Total';"
+			SELECT sectorID, monthlyEarnings 
+			FROM WorksIn
+			WHERE year = ? AND sex = ? AND countryCode = ?),
+			SecondYear AS (
+			SELECT sectorID, monthlyEarnings 
+			FROM WorksIn
+			WHERE year = ? AND sex = ? AND countryCode = ?)
+			SELECT F.sectorID, S.monthlyEarnings - F.monthlyEarnings AS growth
+			FROM FirstYear AS F JOIN SecondYear AS S ON F.sectorID = S.sectorID
+			WHERE S.monthlyEarnings - F.monthlyEarnings > 0 AND S.sectorID != 'Total'
+			ORDER BY S.monthlyEarnings - F.monthlyEarnings DESC;"
 	)) {	
 		$stmt->bind_param('dssdss', $start, $sex, $country, $end, $sex, $country);
 

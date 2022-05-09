@@ -164,8 +164,8 @@
 		SEX: 
 		<select name="sex">  
 			<option value="">--- choose a sex ---</option>}
-			<option value="lower">Females</option>
-			<option value="higher">Males</option>   
+			<option value="Female">Females</option>
+			<option value="Male">Males</option>   
 		</select>
 		<input type="submit">
 	</form>
