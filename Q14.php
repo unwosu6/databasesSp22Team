@@ -35,12 +35,12 @@
         ORDER BY ".$factor." ASC LIMIT 30)
         SELECT avg(GDPperCap) AS average FROM Bot30Internet;";
 
-	// echo some basic header info onto the page
 	echo "<h2>List the 30 countries with the lowest ".$factorWord." in ".$year." and provide an average of their GDP. </h2><br>";
 
-	function displayItems($res, $factorWord) {
+	function displayItems($res) {
+		global $year, $factorWord;
 		if ($res->num_rows == 0) {
-			echo "No results found with specified inputs";
+			echo "There are no records for ".$factorWord." in year ".$year.".";
 		} else {
 			echo "<table border=\"1px solid black\">";
 			echo "<tr><th> Country Name </th> <th> ".$factorWord." </th> ";
@@ -65,7 +65,9 @@
 			$result = $stmt->get_result();
 			if ($result->num_rows != 0) {
 				$row = $result->fetch_assoc();
-				echo "The Average GDP Per Capita: ".$row['average']."<br>";
+				if ($row['average'] != null) {
+					echo "The Average GDP Per Capita: ".$row['average']."<br>";
+				}
 			}
 			$result->free_result();
 		} else {
@@ -84,7 +86,7 @@
 
 		if ($stmt->execute()) {
 			$result = $stmt->get_result();
-			displayItems($result, $factorWord);
+			displayItems($result);
 			$result->free_result();
 		} else {
 			echo "Execution failed";
