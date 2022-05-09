@@ -10,11 +10,12 @@
 	$year = $_POST['year'];
 
 	// echo some basic header info onto the page
-	echo "<h2>What is the most well-paid job sector in ".$year." for each country?</h2><br>";
+	echo "<h2>What was the most well-paid job sector in ".$year." for each country?</h2><br>";
 
 	function displayItems($res) {
 		if ($res->num_rows == 0) {
-			echo "No results found with specified inputs";
+			global $year;
+			echo "No results found for the year ".$year.".";
 		} else {
 			echo "<table border=\"1px solid black\">";
 			echo "<tr><th> Country Name </th> <th> Job Sector </th> ";
@@ -32,11 +33,11 @@
 	}
 
 	if ($stmt = $conn->prepare(
-		"SELECT W.countryCode, W.sectorID, W.sex, W.monthlyEarnings
-        FROM WorksIn AS W, WorksIn AS Wmax
+		"SELECT W.countryCode, C.countryName, W.sectorID, W.sex, W.monthlyEarnings
+        FROM WorksIn AS W, WorksIn AS Wmax JOIN Country AS C
         WHERE W.countryCode = Wmax.countryCode 
         AND W.year = Wmax.year AND W.year = ? 
-        AND Wmax.sectorID != 'Total' 
+        AND Wmax.sectorID != 'Total' AND C.countryCode = W.countryCode
         GROUP BY W.countryCode, W.monthlyEarnings, W.sectorID, W.sex
         HAVING W.monthlyEarnings = max(Wmax.monthlyEarnings)
         ORDER BY W.monthlyEarnings DESC;"
