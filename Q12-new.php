@@ -9,7 +9,8 @@
 	$results = mysqli_query($conn, $query);
 	$countryName = $results->fetch_assoc()['countryName'];
 
-	$dataPoints = array();
+	$dataPointsF = array();
+	$dataPointsM = array();
 
 	echo "<h1>What is the gap in average monthly earnings between males and females in ".$countryName."?</h1>";
 
@@ -30,7 +31,9 @@
 				echo "There is no data for ".$countryName.".";
 			} else{
 				foreach($result as $row){
-					array_push($dataPoints, array( "label"=> $row["year"], "y"=> $row["femalePay"]));
+					array_push($dataPointsF, array( "label"=> $row["year"], "y"=> $row["femalePay"]));
+					array_push($dataPointsM, array( "label"=> $row["year"], "y"=> $row["malePay"]));
+
 				}
 			}
 			
@@ -61,9 +64,34 @@ window.onload = function () {
 		title:{
 			text: "Average Monthly Pay by Year"
 		},
+		axisX: {
+			title: "Year"
+		},
+		axisY2: {
+			title: "Average Monthly Earnings",
+			prefix: "$"
+			// suffix: "K"
+		},
+		toolTip: {
+			shared: true
+		},
+		legend: {
+			cursor: "pointer",
+			verticalAlign: "top",
+			horizontalAlign: "center",
+			dockInsidePlotArea: true
+		},
 		data: [{
 			type: "line", //change type to column, bar, line, area, pie, etc  
-			dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+			showInLegend: true,
+			name: "Female",
+			dataPoints: <?php echo json_encode($dataPointsF, JSON_NUMERIC_CHECK); ?>
+		},
+		{
+			type: "line", //change type to column, bar, line, area, pie, etc  
+			showInLegend: true,
+			name: "Male",
+			dataPoints: <?php echo json_encode($dataPointsM, JSON_NUMERIC_CHECK); ?>
 		}]
 	});
 	chart.render(); 

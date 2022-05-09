@@ -42,6 +42,17 @@
 	// echo some basic header info onto the page
 	echo "<h2>In ".$year.", which countries have the highest ".$factorWord1." in their continent and what is their ".$factorWord2."?</h2><br>";
 
+	// show visual
+	echo "<form action=\"Q15-new.php\" method=\"post\">";
+	echo "<input type=\"hidden\" name=\"year\" value=\"".$year."\">";
+	echo "<input type=\"hidden\" name=\"factor1\" value=\"".$factor1."\">";
+	echo "<input type=\"hidden\" name=\"factor2\" value=\"".$factor2."\">";
+	echo "<input type=\"hidden\" name=\"factorWord1\" value=\"".$factorWord1."\">";
+	echo "<input type=\"hidden\" name=\"factorWord2\" value=\"".$factorWord2."\">";
+	echo "<input type=\"submit\" value=\"see visual\">";
+	echo "</form>";
+	echo "<br/><br/>";
+
 	function displayItems($res) {
 		global $year, $factorWord1, $factorWord2;
 		if ($res->num_rows == 0) {

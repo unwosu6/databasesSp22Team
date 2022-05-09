@@ -14,7 +14,6 @@
 
     $dataPoints = array();
 
-	// echo some basic header info onto the page
 	echo "<h2>What country has the smallest gap in average monthly earnings between males and females in ".$year."? </h2><br>";
 
 	function displayItems($res) {
