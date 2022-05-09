@@ -30,9 +30,9 @@
 	<br/><br/>
 
 	<!-- (3) -->
-	<h2> What is the average paid leave for each continent? (Visual)</h2>
+	<h2> What is the average number of days of annual paid leave for each continent? (Visual)</h2>
 	<form action="Q3.php" method="post">
-		<input type="submit">
+		<input type="submit" value="show visual">
 	</form>
 	<br/><br/>
 
