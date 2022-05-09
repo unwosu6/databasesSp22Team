@@ -174,12 +174,12 @@ ORDER BY pctUsingInternet ASC LIMIT 30)
 SELECT avg(GDPperCap) AS average FROM Bot30Internet;
 
 -- 15: Which countries have the highest population in their continent and what is their fertility rate and continent?
-WITH AnnualCountryStatsWithContinent AS(
-SELECT ACS.countryCode, ACS.population, ACS.fertRate, ACS.year, C.continent
-FROM AnnualCountryStats AS ACS JOIN Country AS C ON ACS.countryCode = C.countryCode)
-SELECT ACS.countryCode, ACS.continent, ACS.population, ACS.fertRate 
-FROM AnnualCountryStatsWithContinent AS ACS, AnnualCountryStatsWithContinent AS ACSmax
-WHERE ACS.year = 2016 AND ACS.year = ACSmax.year AND ACS.continent = ACSmax.continent
-GROUP BY ACS.continent, ACS.countryCode, ACS.fertRate, ACS.population
-HAVING ACS.population = max(ACSmax.population)
-ORDER BY ACS.population DESC;
+WITH greater AS (SELECT continent, COUNT(countryCode) AS numCountry
+                FROM Country
+                WHERE paidLeaveTotal > 5
+                GROUP BY continent),
+total AS (SELECT continent, COUNT(countryCode) AS numCountry
+                FROM Country
+                GROUP BY continent)
+SELECT total.continent, MAX(CAST(greater.numCountry / total.numCountry * 100 AS DECIMAL(5, 2)))
+FROM greater JOIN total ON total.continent = greater.continent;
