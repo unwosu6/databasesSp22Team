@@ -32,11 +32,6 @@ ON C.countryCode = ACS.countryCode
 WHERE ACS.year = 2016 AND ACS.lifeSatisfaction > 5 AND ACS.lifeSatisfaction < 9
 ORDER BY C.paidLeaveTotal DESC;
 
-SELECT avg(C.paidLeaveTotal) AS averagePaidLeave 
-FROM Country AS C JOIN AnnualCountryStats AS ACS 
-ON C.countryCode = ACS.countryCode 
-WHERE ACS.year = 4 AND ACS.lifeSatisfaction > 5 AND ACS.lifeSatisfaction < 10 AND C.paidLeaveTotal IS NOT NULL;
-
 -- 5: How many countries had a lower life satisfaction than the United States in 2010?
 WITH lowerLS AS (
 SELECT countryCode
@@ -61,6 +56,18 @@ FROM AnnualCountryStats AS ACS JOIN Country AS C ON C.countryCode = ACS.countryC
 WHERE year = 2016
 AND lifeSatisfaction >= (SELECT ACS2.lifeSatisfaction FROM AnnualCountryStats AS ACS2 WHERE year = 2016 AND countryCode = 'USA')
 GROUP BY C.continent;
+
+-- 7
+WITH NumCountry AS (SELECT continent, count(*) AS numCountries
+FROM Country
+WHERE paidLeaveTotal > 5
+GROUP BY continent),
+Totals AS (SELECT continent, count(*) AS totalCountries
+FROM Country
+GROUP BY continent)
+SELECT N.continent, N.numCountries/T.totalCountries*100 AS pct
+FROM NumCountry AS N JOIN Totals AS T ON N.continent = T.continent;
+
 
 -- 8: What is the average life expectancy of a country with a life expectancy above 6 for each year before 2016?
 SELECT ADS.year, avg(ADS.lifeExpect) AS averageLifeExpectancy

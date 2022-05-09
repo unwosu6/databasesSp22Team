@@ -1,48 +1,40 @@
-<head><title>Q7</title></head>
-<body>
 <?php
-
 	//open a connection to dbase server 
 	include 'open.php';
-	ini_set('error_reporting', E_ALL);
-	ini_set('display_errors', true);
-	// collect the posted value in a variable
+
+	//construct an array in which we'll store our data
 	$number = $_POST['number'];
 
-	// echo some basic header info onto the page
-	echo "<h2>Which continent has the greatest percentage of countries that have more than ".$number." of days of paid leave?</h2><br>";
+	$dataPoints = array();
 
-	function displayItems($res) {
-		if ($res->num_rows == 0) {
-			echo "No results found with specified inputs";
-		} else {
-			echo "<table border=\"1px solid black\">";
-			echo "<tr><th> Continent </th> <th> Percentage with more than ".$number." paid leave </th> ";
-			while (null !== ($row = $res->fetch_assoc())) {
-				echo "<tr>";
-				echo "<td>".$row['continent']."</td>";
-				echo "<td>".$row['pctCountries']."</td>";
-				echo "</tr>";
-			}
-	
-			echo "</table>";
-		}
-	}
+	echo "<h2>What percentage of countries have more than ".$number." of days of paid leave on each continent?</h2><br>";
 
-	if ($stmt = $conn->prepare(
-		"WITH fiveDays AS (SELECT countryCode, continent
-        FROM Country
-        WHERE paidLeaveTotal > ?)
-        SELECT percents.continent, MAX(percents.pct) AS pctCountries
-        FROM (SELECT C2.continent, MAX(COUNT(greater.countryCode)/COUNT(C2.countryCode) AS pct)
-        FROM fiveDays, Country AS C2
-        GROUP BY C2.continent) AS percents;"
-	)) {	
-		$stmt->bind_param('i', $number);
+	//we'll soon see how to upgrade our queries so they aren't plain strings
+	$sqlCode = "WITH NumCountry AS (SELECT continent, count(*) AS numCountries
+	FROM Country
+	WHERE paidLeaveTotal > ?
+	GROUP BY continent),
+	Totals AS (SELECT continent, count(*) AS totalCountries
+	FROM Country
+	GROUP BY continent)
+	SELECT N.continent, N.numCountries/T.totalCountries*100 AS pct
+	FROM NumCountry AS N JOIN Totals AS T ON N.continent = T.continent;";
+
+	//execute the query, then run through the result table row by row to
+	//put each row's data into our array
+	if ($stmt = $conn->prepare($sqlCode)) {	
+		$stmt->bind_param('d', $number);
 
 		if ($stmt->execute()) {
 			$result = $stmt->get_result();
-			displayItems($result);
+			if ($result->num_rows == 0) {
+				echo "There are no records with a number of days above ".$number.".";
+			} else{
+				foreach($result as $row){
+					array_push($dataPoints, array( "label"=> $row["continent"], "y"=> $row["pct"]));
+				}
+			}
+			
 			$result->free_result();
 		} else {
 			echo "Execution failed";
@@ -53,8 +45,34 @@
 		$error = $conn->errno . ' ' . $conn->error;
 		echo $error;
 	}
-
-
+	
+	//close the connection opened by open.php since we no longer need access to dbase
 	$conn->close();
 ?>
+
+
+<html>
+<head>
+<script>
+window.onload = function () { 
+	var chart = new CanvasJS.Chart("chartContainer", {
+		animationEnabled: true,
+		exportEnabled: true,
+		theme: "light1", // "light1", "light2", "dark1", "dark2"
+		title:{
+			text: "Percent of Countries on Each Continent"
+		},
+		data: [{
+			type: "bar", //change type to column, bar, line, area, pie, etc  
+			dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+		}]
+	});
+	chart.render(); 
+}
+</script>
+</head>
+<body>
+	<div id="chartContainer" style="height: 400px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
+</html>

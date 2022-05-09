@@ -76,7 +76,7 @@
 	</form>
 
 	<!-- (7) -->
-	<h2> Which continent has the greatest percentage of countries that have more than [NUMBER] of days of paid leave? (Visual)</h2>
+	<h2> What percentage of countries have more than [NUMBER] of days of paid leave on each continent? (Visual)</h2>
 	<h3> (The recommended range is from 0 to 10)</h3>
 	<form action="Q7.php" method="post">
 		NUMBER: <input type="text" name="number"> <br/>
@@ -85,7 +85,7 @@
 	<br/><br/>
 
 	<!-- (8) -->
-	<h2> What is the average [FACTOR] of a country with a life satisfaction above [NUMBER] for each year before [YEAR]?</h2>
+	<h2> What is the average [FACTOR] of a country with a life satisfaction above [NUMBER] for each year?</h2>
 	<form action="Q8.php" method="post">
 		FACTOR:
 		<select name="factor">  
@@ -97,7 +97,6 @@
 			<option value="literacyRate">Literacy Rate</option>  
 		</select><br/>
 		NUMBER: <input type="text" name="number"> <br/>
-		YEAR: <input type="text" name="year"> <br/>
 		<input type="submit">
 	</form>
 	<br/><br/>
