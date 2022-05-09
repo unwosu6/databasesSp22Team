@@ -6,7 +6,7 @@
 	<!-- (1) -->
 	<h2> In [YEAR] what was the average level of life satisfaction for countries with the top 3 GDPs on the continent of [CONTINENT]?</h2>
 	<form action="Q1.php" method="post">
-		YEAR: <input type="text" name="year"> <br/>
+		YEAR: <input type="text" name="year"><br/>
 		CONTINENT: 
 		<select name="continent">  
 			<option value="">--- choose a continent ---</option>}
@@ -16,8 +16,7 @@
 			<option value="South America">South America</option>  
 			<option value="Europe">Europe</option>  
 			<option value="Oceania">Oceania</option>  
-		</select>
-		<br/>
+		</select><br/>
 		<input type="submit">
 	</form>
 	<br/><br/>

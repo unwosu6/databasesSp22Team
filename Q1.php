@@ -10,12 +10,12 @@
 	$year = $_POST['year'];
 	$continent = $_POST['continent'];
 
-	// echo some basic header info onto the page
 	echo "<h2>In ".$year." what was the life satisfaction for countries with the top 3 GDPs on the continent of ".$continent."? </h2><br>";
 
 	function displayItems($res) {
 		if ($res->num_rows == 0) {
-			echo "No results found with specified inputs";
+			global $continent, $year;
+			echo "There is no data for ".$continent." in the year ".$year.".";
 		} else {
 			echo "<table border=\"1px solid black\">";
 			echo "<tr><th> Country Name </th> <th> GDP per Capita </th> ";
