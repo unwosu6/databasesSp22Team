@@ -9,8 +9,13 @@
 	// collect the posted value in a variable
 	$year = $_POST['year'];
 	$direction = $_POST['direction'];
-	$symb = "";
-	$country = "USA";
+	$country = $_POST['country'];
+
+	$query = "SELECT countryName FROM Country WHERE countryCode ='".$country."';";
+	$results = mysqli_query($conn, $query);
+	$countryName = $results->fetch_assoc()['countryName'];
+	$sqlCode = "";
+	
 	if ($direction == "higher") {
         $sqlCode = "SELECT ACS.countryCode, C.countryName, C.continent, ACS.lifeSatisfaction
         FROM AnnualCountryStats AS ACS JOIN Country AS C ON C.countryCode = ACS.countryCode
@@ -25,22 +30,7 @@
         ORDER BY C.continent, ACS.lifeSatisfaction DESC;";
     }
 
-
-	
-	// dynamic dropdown
-    echo "COUNTRY:"; 
-	echo "<select name=\"country\">";
-	echo "<option value=\"\">Select Country</option>";
-	//populate value using php
-    $query = "SELECT * FROM Country;";
-    $results = mysqli_query($conn, $query);
-    //loop
-    foreach ($results as $country){
-        echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
-    }
-	echo "</select><br/>";
-
-
+	// $_SESSION['sqlCode'] = $sqlCode;
 
     function displayItems($res) {
 		if ($res->num_rows == 0) {
@@ -62,10 +52,18 @@
 	}
 
 	// echo some basic header info onto the page
-	echo "<h2>How many countries from each contient have a ".$direction." life satisfaction than [COUNTRY] in ".$year."?</h2><br>";
+	echo "<h2>How many countries from each contient have a ".$direction." life satisfaction than ".$countryName." in ".$year."?</h2><br>";
+	// echo $sqlCode;
+	echo "<form action=\"Q56-new.php\" method=\"post\">";
+	echo "<input type=\"hidden\" name=\"direction\" value=\"".$direction."\">";
+	echo "<input type=\"hidden\" name=\"year\" value=\"".$year."\">";
+	echo "<input type=\"hidden\" name=\"country\" value=\"".$country."\">";
+	echo "<input type=\"submit\" value=\"see visual\">";
+	echo "</form>";
+	echo "<br/><br/>";
 
 	if ($stmt = $conn->prepare($sqlCode)) {	
-		$stmt->bind_param('dds', $year, $year, $countryCode);
+		$stmt->bind_param('dds', $year, $year, $country);
 
 		if ($stmt->execute()) {
 			$result = $stmt->get_result();
