@@ -135,7 +135,8 @@
 			<option value="GDPperCap">GDP Per Capita</option>  
 			<option value="population">Population</option>  
 			<option value="fertRate">Fertility Rate</option>  
-		</select>
+		</select><br/>
+		NUMBER: <input type="text" name="number"> <br/>
 		<input type="submit">
 	</form>
 	<br/><br/>

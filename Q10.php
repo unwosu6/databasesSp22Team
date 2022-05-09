@@ -41,12 +41,12 @@
 	}
 
 	if ($stmt = $conn->prepare(
-		"SELECT year, avg(?) AS average ".
-        "FROM AnnualCountryStats ".
-        "WHERE lifeSatisfaction > ? ".
-        "GROUP BY year;"
+		"SELECT year, avg(".$factor.") AS average 
+        FROM AnnualCountryStats 
+        WHERE lifeSatisfaction > ? 
+        GROUP BY year;"
 	)) {	
-		$stmt->bind_param('sd', $factor, $number);
+		$stmt->bind_param('d', $number);
 
 		if ($stmt->execute()) {
 			$result = $stmt->get_result();
