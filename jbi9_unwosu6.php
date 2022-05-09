@@ -85,7 +85,7 @@
 	<br/><br/>
 
 	<!-- (8) -->
-	<h2> What is the average [FACTOR] of a country with a life satisfaction above [NUMBER] for each year?</h2>
+	<h2> What is the average [FACTOR] of a country with a life satisfaction above [NUMBER] for each year? (Visual)</h2>
 	<form action="Q8.php" method="post">
 		FACTOR:
 		<select name="factor">  
@@ -102,9 +102,15 @@
 	<br/><br/>
 
 	<!-- (9) -->
-	<h2> What is the average life satisfaction of the bottom 30 countries with the lowest [SEX] [FACTOR] in [YEAR]?</h2>
+	<h2> What is the average life satisfaction of the bottom 10 countries with the lowest [SEX] [FACTOR] in [YEAR]?</h2>
+	<h3> (Life satisfaction is measured on a scale from 0 to 10)</h3>
 	<form action="Q9.php" method="post">
-		SEX: <input type="text" name="sex"> <br/>
+		SEX:
+		<select name="sex">  
+			<option value="">--- choose a sex ---</option>}
+			<option value="Female">Female</option>
+			<option value="Male">Male</option>  
+		</select><br/>
 		FACTOR:
 		<select name="factor">  
 			<option value="">--- choose a factor ---</option>}
@@ -113,7 +119,7 @@
 			<option value="pctBasicEdu">Percent of the Population with Basic Education</option>  
 			<option value="lifeExpect">Life Expectancy</option>  
 			<option value="literacyRate">Literacy Rate</option>  
-		</select>
+		</select><br/>
 		YEAR: <input type="text" name="year"> <br/>
 		<input type="submit">
 	</form>

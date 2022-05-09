@@ -36,6 +36,7 @@
 			echo "</table>";
 		}
 	}
+
 	if ($stmt = $conn->prepare(
 		"WITH Diff AS (
             SELECT C.countryName, W.countryCode, W.year, W.monthlyEarnings AS femalePay, W2.monthlyEarnings AS malePay, abs(W.monthlyEarnings - W2.monthlyEarnings) AS payDiff
