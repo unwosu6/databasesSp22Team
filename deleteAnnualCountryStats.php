@@ -1,4 +1,4 @@
-<head><title>Delete WorksIn</title></head>
+<head><title>Delete AnnualCountryStats</title></head>
 <body>
 <?php
 
@@ -7,19 +7,17 @@
 	ini_set('error_reporting', E_ALL);
 	ini_set('display_errors', true);
 	// collect the posted value in a variable
-	$country = $_POST['country'];
-    $sectorID = $_POST['sectorID'];
+	$countryCode = $_POST['country'];
 	$year = $_POST['year'];
-    $sex = $_POST['sex'];
 
-    $query = "SELECT countryName FROM Country WHERE countryCode ='".$country."';";
+    $query = "SELECT countryName FROM Country WHERE countryCode ='".$countryCode."';";
 	$results = mysqli_query($conn, $query);
 	$countryName = $results->fetch_assoc()['countryName'];
 
-    $code = "DELETE FROM WorksIn 
-    WHERE countryCode = ? AND sectorID = ? AND year = ? AND sex = ?;";
+    $code = "DELETE FROM AnnualCountryStats 
+    WHERE countryCode = ? AND year = ?;";
 
-	echo "<h2>Delete an Average Monthly Earnings Value</h2><br>";
+	echo "<h2>Delete a Country Statistic</h2><br>";
 
     if (!ctype_digit($year)) {
         echo "ERROR: year (".$year.") must be a positive integer"; 
@@ -27,12 +25,12 @@
         if (strlen($year) == 0) {
             echo "ERROR: year (".$year.") must be a positive integer";
         } elseif ($stmt = $conn->prepare($code)) {
-            $stmt->bind_param('ssds', $country, $sectorID, $year, $sex);
+            $stmt->bind_param('sd', $countryCode, $year);
     
             if ($stmt->execute()) {
-                echo "Average monthly earnings in ".$year." for ".$sex."s in ".$countryName." working in ".$sectorID." was sucessfully deleted from the database";
+                echo "Statistics for ".$countryName." in ".$year." were sucessfully removed from the database";
             } else {
-                echo "Execution failed because there is no record for average monthly earnings in ".$year." for ".$sex."s in ".$countryName." working in the sector: ".$sectorID." in the database.";
+                echo "Execution failed because statistics for ".$countryName." in ".$year." have not been added to the database";
             }
             echo "<br><br>";
     

@@ -6,10 +6,9 @@
 	<!-- (1) -->
 	<h2> In [YEAR] what was the average level of life satisfaction for countries with the top 3 GDPs on the continent of [CONTINENT]?</h2>
 	<form action="Q1.php" method="post">
-		YEAR: <input type="text" name="year"><br/>
+		YEAR: <input type="number" name="year"><br/>
 		CONTINENT: 
 		<select name="continent">  
-			<option value="">--- choose a continent ---</option>}
 			<option value="Africa">Africa</option>
 			<option value="Asia">Asia</option>  
 			<option value="North America">North America</option>  
@@ -24,7 +23,7 @@
 	<!-- (2) -->
 	<h2> What was the most well-paid job sector in [YEAR] for each country?</h2>
 	<form action="Q2.php" method="post">
-		YEAR: <input type="text" name="year"> <br/>
+		YEAR: <input type="number" name="year"> <br/>
 		<input type="submit">
 	</form>
 	<br/><br/>
@@ -40,7 +39,7 @@
 	<h2> In [YEAR], what was the average number of days of paid leave for countries with a life satisfaction above [LOWER LIMIT] and below [UPPER LIMIT]?</h2>
 	<h3> (Life satisfaction is measured on a scale from 0 to 10)</h3>
 	<form action="Q4.php" method="post">
-		YEAR: <input type="text" name="year"> <br/>
+		YEAR: <input type="number" name="year"> <br/>
 		LOWER LIMIT: <input type="text" name="lower"> <br/>
 		UPPER LIMIT: <input type="text" name="upper"> <br/>
 		<input type="submit">
@@ -52,7 +51,6 @@
 	<form action="Q56.php" method="post">
 		DIRECTION:
 		<select name="direction">  
-			<option value="">--- choose a direction ---</option>}
 			<option value="lower">Lower</option>
 			<option value="higher">Higher</option>   
 		</select><br/>
@@ -60,7 +58,6 @@
 			include 'open.php';
 			echo "COUNTRY:"; 
 			echo "<select name=\"country\">";
-			echo "<option value=\"\">--- choose a country ---</option>";
 			//populate value using php
 			$query = "SELECT * FROM Country;";
 			$results = mysqli_query($conn, $query);
@@ -71,7 +68,7 @@
 			echo "</select><br/>";
 			$conn->close();
 		?>
-		YEAR: <input type="text" name="year"> <br/>
+		YEAR: <input type="number" name="year"> <br/>
 		<input type="submit">
 	</form>
 
@@ -89,7 +86,6 @@
 	<form action="Q8.php" method="post">
 		FACTOR:
 		<select name="factor">  
-			<option value="">--- choose a factor ---</option>}
 			<option value="laborForcePartipation">Labor Force Participation Rate</option>
 			<option value="pctAdvancedEdu">Percent of the Population with Advanced Education</option>  
 			<option value="pctBasicEdu">Percent of the Population with Basic Education</option>  
@@ -107,20 +103,18 @@
 	<form action="Q9.php" method="post">
 		SEX:
 		<select name="sex">  
-			<option value="">--- choose a sex ---</option>}
 			<option value="Female">Female</option>
 			<option value="Male">Male</option>  
 		</select><br/>
 		FACTOR:
 		<select name="factor">  
-			<option value="">--- choose a factor ---</option>}
 			<option value="laborForcePartipation">Labor Force Participation Rate</option>
 			<option value="pctAdvancedEdu">Percent of the Population with Advanced Education</option>  
 			<option value="pctBasicEdu">Percent of the Population with Basic Education</option>  
 			<option value="lifeExpect">Life Expectancy</option>  
 			<option value="literacyRate">Literacy Rate</option>  
 		</select><br/>
-		YEAR: <input type="text" name="year"> <br/>
+		YEAR: <input type="number" name="year"> <br/>
 		<input type="submit">
 	</form>
 	<br/><br/>
@@ -157,8 +151,8 @@
 			echo "</select><br/>";
 			$conn->close();
 		?>
-		START YEAR: <input type="text" name="start"> <br/>
-		END YEAR: <input type="text" name="end"> <br/>
+		START YEAR: <input type="number" name="start"> <br/>
+		END YEAR: <input type="number" name="end"> <br/>
 		SEX: 
 		<select name="sex">  
 			<option value="Female">Females</option>
@@ -171,7 +165,7 @@
 	<!-- (12) -->
 	<h2> What country has the smallest gap in average monthly earnings between males and females in [YEAR]? (Visual)</h2>
 	<form action="Q12.php" method="post">
-		YEAR: <input type="text" name="year"> <br/>
+		YEAR: <input type="number" name="year"> <br/>
 		<input type="submit">
 	</form>
 	<br/><br/>
@@ -200,7 +194,7 @@
 	<!-- (13) -->
 	<h2> In [YEAR], how many countries (list them) are in both the top 50 for [FACTOR] and GDP per capita?</h2>
 	<form action="Q13.php" method="post">
-		YEAR: <input type="text" name="year"> <br/>
+		YEAR: <input type="number" name="year"> <br/>
 		FACTOR:
 		<select name="factor">  
 			<option value="pctUsingInternet">Percent of the Population Using the Internet</option>
@@ -222,7 +216,7 @@
 			<option value="population">Population</option>  
 			<option value="fertRate">Fertility Rate</option>  
 		</select><br/>
-		YEAR: <input type="text" name="year"> <br/>
+		YEAR: <input type="number" name="year"> <br/>
 		<input type="submit">
 	</form>
 	<br/><br/>
@@ -265,7 +259,6 @@
 			<option value="Europe">Europe</option>  
 			<option value="Oceania">Oceania</option>  
 		</select><br/>
-		<!-- can be left empty but these must add to be less than 365 https://stackoverflow.com/questions/5052932/how-to-get-int-instead-string-from-form -->
 		Number of days of required paid vacation days annually: <input type="text" name="paidVacDay"><br/>
 		Number of days of paid holidays days annually: <input type="text" name="paidHoliday"><br/>
 		<input type="submit">
@@ -295,6 +288,104 @@
 
 	<!-- (AnnualDemoStats) -->
 	<!-- (AnnualCountryStats) -->
+	<h2> Add a Country Statistic by Demographic</h2>
+	<form action="insertAnnualDemoStats.php" method="post">
+		Year: <input type="number" name="year"><br/>
+		<?php
+			include 'open.php';
+			echo "Country to delete: "; 
+			echo "<select name=\"country\">";
+			//populate value using php
+			$query = "SELECT * FROM Country;";
+			$results = mysqli_query($conn, $query);
+			//loop
+			foreach ($results as $country){
+				echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
+			}
+			echo "</select><br/>";
+			$conn->close();
+		?>
+		Percent of the Population Using the Internet (as a value between 0 and 100): <input type="text" name="pctUsingInternet"><br/>
+		GDP Per Capita (in USD): <input type="text" name="GDPperCap"><br/>
+		Population: <input type="text" name="population"><br/>
+		Fertility rate: <input type="text" name="fertRate"><br/>
+		Life Satisfaction (as a value between 0 and 10): <input type="text" name="lifeSatisfaction"><br/>
+		<input type="submit">
+	</form>
+	<br/><br/>
+
+	<h2> Delete a Country Statistic by Demographic</h2>
+	<h3> Refresh the page to delete newly added countries</h3>
+	<form action="deleteAnnualDemoStats.php" method="post">
+		<?php
+			include 'open.php';
+			echo "Country to delete: "; 
+			echo "<select name=\"country\">";
+			//populate value using php
+			$query = "SELECT * FROM Country;";
+			$results = mysqli_query($conn, $query);
+			//loop
+			foreach ($results as $country){
+				echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
+			}
+			echo "</select><br/>";
+			$conn->close();
+		?>
+		Year: <input type="number" name="year"><br/>
+		<input type="submit">
+	</form>
+	<br/><br/>
+
+
+	<!-- (AnnualCountryStats) -->
+	<h2> Add a Country Statistic</h2>
+	<form action="insertAnnualCountryStats.php" method="post">
+		Year: <input type="number" name="year"><br/>
+		<?php
+			include 'open.php';
+			echo "Country to delete: "; 
+			echo "<select name=\"country\">";
+			//populate value using php
+			$query = "SELECT * FROM Country;";
+			$results = mysqli_query($conn, $query);
+			//loop
+			foreach ($results as $country){
+				echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
+			}
+			echo "</select><br/>";
+			$conn->close();
+		?>
+		Percent of the Population Using the Internet (as a value between 0 and 100): <input type="text" name="pctUsingInternet"><br/>
+		GDP Per Capita (in USD): <input type="text" name="GDPperCap"><br/>
+		Population: <input type="text" name="population"><br/>
+		Fertility rate: <input type="text" name="fertRate"><br/>
+		Life Satisfaction (as a value between 0 and 10): <input type="text" name="lifeSatisfaction"><br/>
+		<input type="submit">
+	</form>
+	<br/><br/>
+
+	<h2> Delete a Country Statistic</h2>
+	<h3> Refresh the page to delete newly added countries</h3>
+	<form action="deleteAnnualCountryStats.php" method="post">
+		<?php
+			include 'open.php';
+			echo "Country to delete: "; 
+			echo "<select name=\"country\">";
+			//populate value using php
+			$query = "SELECT * FROM Country;";
+			$results = mysqli_query($conn, $query);
+			//loop
+			foreach ($results as $country){
+				echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
+			}
+			echo "</select><br/>";
+			$conn->close();
+		?>
+		Year: <input type="number" name="year"><br/>
+		<input type="submit">
+	</form>
+	<br/><br/>
+
 	<!-- (WorksIn) -->
 	<h2> Add an Average Monthly Earnings Value</h2>
 	<form action="insertWorksIn.php" method="post">
@@ -326,7 +417,7 @@
 			echo "</select><br/>";
 			$conn->close();
 		?>
-		Year: <input type="text" name="year"><br/>
+		Year: <input type="number" name="year"><br/>
 		Sex: 
 		<select name="sex">  
 			<option value="Female">Female</option>
@@ -367,7 +458,7 @@
 			echo "</select><br/>";
 			$conn->close();
 		?>
-		Year: <input type="text" name="year"><br/>
+		Year: <input type="number" name="year"><br/>
 		Sex: 
 		<select name="sex">  
 			<option value="Female">Female</option>
