@@ -287,7 +287,6 @@
 	<br/><br/>
 
 	<!-- (AnnualDemoStats) -->
-	<!-- (AnnualCountryStats) -->
 	<h2> Add a Country Statistic by Demographic</h2>
 	<form action="insertAnnualDemoStats.php" method="post">
 		Year: <input type="number" name="year"><br/>
@@ -305,11 +304,16 @@
 			echo "</select><br/>";
 			$conn->close();
 		?>
-		Percent of the Population Using the Internet (as a value between 0 and 100): <input type="text" name="pctUsingInternet"><br/>
-		GDP Per Capita (in USD): <input type="text" name="GDPperCap"><br/>
-		Population: <input type="text" name="population"><br/>
-		Fertility rate: <input type="text" name="fertRate"><br/>
-		Life Satisfaction (as a value between 0 and 10): <input type="text" name="lifeSatisfaction"><br/>
+		Sex: 
+		<select name="sex">  
+			<option value="Female">Female</option>
+			<option value="Male">Male</option>   
+		</select><br/>
+		Labor Force Participation Rate (as a value between 0 and 100): <input type="text" name="laborForcePartipation"><br/>
+		Percent of the Population with an Advanced Education (as a value between 0 and 100): <input type="text" name="pctAdvancedEdu"><br/>
+		Percent of the Population with an Basic Education (as a value between 0 and 100): <input type="text" name="pctBasicEdu"><br/>
+		Life Expectancy (in years): <input type="text" name="lifeExpect"><br/>
+		Literacy Rate (as a value between 0 and 100): <input type="text" name="literacyRate"><br/>
 		<input type="submit">
 	</form>
 	<br/><br/>
@@ -332,6 +336,11 @@
 			$conn->close();
 		?>
 		Year: <input type="number" name="year"><br/>
+		Sex: 
+		<select name="sex">  
+			<option value="Female">Female</option>
+			<option value="Male">Male</option>   
+		</select><br/>
 		<input type="submit">
 	</form>
 	<br/><br/>
