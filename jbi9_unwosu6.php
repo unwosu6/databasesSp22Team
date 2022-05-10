@@ -130,7 +130,6 @@
 	<form action="Q10.php" method="post">
 		FACTOR:
 		<select name="factor">  
-			<option value="">--- choose a factor ---</option>}
 			<option value="pctUsingInternet">Percent of the Population Using the Internet</option>
 			<option value="GDPperCap">GDP Per Capita</option>  
 			<option value="population">Population</option>  
@@ -148,7 +147,6 @@
 			include 'open.php';
 			echo "COUNTRY:"; 
 			echo "<select name=\"country\">";
-			echo "<option value=\"\">--- choose a country ---</option>";
 			//populate value using php
 			$query = "SELECT * FROM Country;";
 			$results = mysqli_query($conn, $query);
@@ -163,7 +161,6 @@
 		END YEAR: <input type="text" name="end"> <br/>
 		SEX: 
 		<select name="sex">  
-			<option value="">--- choose a sex ---</option>}
 			<option value="Female">Females</option>
 			<option value="Male">Males</option>   
 		</select>
@@ -186,7 +183,6 @@
 			include 'open.php';
 			echo "COUNTRY:"; 
 			echo "<select name=\"country\">";
-			echo "<option value=\"\">--- choose a country ---</option>";
 			//populate value using php
 			$query = "SELECT * FROM Country;";
 			$results = mysqli_query($conn, $query);
@@ -207,7 +203,6 @@
 		YEAR: <input type="text" name="year"> <br/>
 		FACTOR:
 		<select name="factor">  
-			<option value="">--- choose a factor ---</option>}
 			<option value="pctUsingInternet">Percent of the Population Using the Internet</option>
 			<option value="lifeSatisfaction">Life Satisfaction</option>  
 			<option value="population">Population</option>  
@@ -222,7 +217,6 @@
 	<form action="Q14.php" method="post">
 		FACTOR:
 		<select name="factor">  
-			<option value="">--- choose a factor ---</option>}
 			<option value="pctUsingInternet">Percent of the Population Using the Internet</option>
 			<option value="lifeSatisfaction">Life Satisfaction</option>  
 			<option value="population">Population</option>  
@@ -239,7 +233,6 @@
 		YEAR: <input type="text" name="year"> <br/>
 		FACTOR 1:
 		<select name="factor1">  
-			<option value="">--- choose a factor ---</option>}
 			<option value="pctUsingInternet">Percent of the Population Using the Internet</option>
 			<option value="GDPperCap">GDP Per Capita</option>  
 			<option value="population">Population</option>  
@@ -248,12 +241,137 @@
 		</select><br/>
 		FACTOR 2:
 		<select name="factor2">  
-			<option value="">--- choose a factor ---</option>}
 			<option value="pctUsingInternet">Percent of the Population Using the Internet</option>
 			<option value="GDPperCap">GDP Per Capita</option>  
 			<option value="population">Population</option>  
 			<option value="fertRate">Fertility Rate</option>  
 			<option value="lifeSatisfaction">Life Satisfaction</option>
+		</select><br/>
+		<input type="submit">
+	</form>
+	<br/><br/>
+
+	<!-- (Country) -->
+	<h2> Add a Country</h2>
+	<form action="insertCountry.php" method="post">
+		Country Code (3 letter): <input type="text" name="countryCode"><br/>
+		Country Name: <input type="text" name="countryName"><br/>
+		Continent: 
+		<select name="continent">  
+			<option value="Africa">Africa</option>
+			<option value="Asia">Asia</option>  
+			<option value="North America">North America</option>  
+			<option value="South America">South America</option>  
+			<option value="Europe">Europe</option>  
+			<option value="Oceania">Oceania</option>  
+		</select><br/>
+		<!-- can be left empty but these must add to be less than 365 https://stackoverflow.com/questions/5052932/how-to-get-int-instead-string-from-form -->
+		Number of days of required paid vacation days annually: <input type="text" name="paidVacDay"><br/>
+		Number of days of paid holidays days annually: <input type="text" name="paidHoliday"><br/>
+		<input type="submit">
+	</form>
+	<br/><br/>
+
+	<h2> Delete a Country</h2>
+	<h3> Refresh the page to delete newly added countries</h3>
+	<form action="deleteCountry.php" method="post">
+		<?php
+			include 'open.php';
+			echo "Country to delete: "; 
+			echo "<select name=\"country\">";
+			//populate value using php
+			$query = "SELECT * FROM Country;";
+			$results = mysqli_query($conn, $query);
+			//loop
+			foreach ($results as $country){
+				echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
+			}
+			echo "</select><br/>";
+			$conn->close();
+		?>
+		<input type="submit">
+	</form>
+	<br/><br/>
+
+	<!-- (AnnualDemoStats) -->
+	<!-- (AnnualCountryStats) -->
+	<!-- (WorksIn) -->
+	<h2> Add an Average Monthly Earnings Value</h2>
+	<form action="insertWorksIn.php" method="post">
+		<?php
+			include 'open.php';
+			echo "Country: "; 
+			echo "<select name=\"country\">";
+			//populate value using php
+			$query = "SELECT * FROM Country;";
+			$results = mysqli_query($conn, $query);
+			//loop
+			foreach ($results as $country){
+				echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
+			}
+			echo "</select><br/>";
+			$conn->close();
+		?>
+		<?php
+			include 'open.php';
+			echo "Sector ID: "; 
+			echo "<select name=\"sectorID\">";
+			//populate value using php
+			$query = "SELECT DISTINCT sectorID FROM WorksIn;";
+			$results = mysqli_query($conn, $query);
+			//loop
+			foreach ($results as $earning){
+				echo "<option value=\"".$earning['sectorID']."\">".$earning['sectorID']."</option>";
+			}
+			echo "</select><br/>";
+			$conn->close();
+		?>
+		Year: <input type="text" name="year"><br/>
+		Sex: 
+		<select name="sex">  
+			<option value="Female">Female</option>
+			<option value="Male">Male</option>  
+		</select><br/>
+		Average Monthly Earnings: <input type="text" name="monthlyEarnings"><br/>
+		<input type="submit">
+	</form>
+	<br/><br/>
+
+	<h2> Delete an Average Monthly Earnings Value</h2>
+	<form action="deleteWorksIn.php" method="post">
+		<?php
+			include 'open.php';
+			echo "Country: "; 
+			echo "<select name=\"country\">";
+			//populate value using php
+			$query = "SELECT * FROM Country;";
+			$results = mysqli_query($conn, $query);
+			//loop
+			foreach ($results as $country){
+				echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
+			}
+			echo "</select><br/>";
+			$conn->close();
+		?>
+		<?php
+			include 'open.php';
+			echo "Sector ID: "; 
+			echo "<select name=\"sectorID\">";
+			//populate value using php
+			$query = "SELECT DISTINCT sectorID FROM WorksIn;";
+			$results = mysqli_query($conn, $query);
+			//loop
+			foreach ($results as $earning){
+				echo "<option value=\"".$earning['sectorID']."\">".$earning['sectorID']."</option>";
+			}
+			echo "</select><br/>";
+			$conn->close();
+		?>
+		Year: <input type="text" name="year"><br/>
+		Sex: 
+		<select name="sex">  
+			<option value="Female">Female</option>
+			<option value="Male">Male</option>  
 		</select><br/>
 		<input type="submit">
 	</form>

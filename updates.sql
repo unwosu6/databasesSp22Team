@@ -4,7 +4,7 @@
 -- insertions
 -- case where foreign key (countryCode) does not yet exist
 INSERT INTO Country(countryCode, countryName, continent, paidVacDays, paidHoliday, paidLeaveTotal)
-VALUES ('ABC', 'Udoannaland', 'Africa', 5, 5, 10, 20);
+VALUES ('ABC', 'Udoannaland', 'Africa', 5, 10, 20);
 INSERT INTO AnnualCountryStats (countryCode, year, pctUsingInternet, GDPperCap, population, fertRate, lifeSatisfaction) 
 VALUES ('ABC', 2001, 0.9, 5, 10, 1, 5);
 -- case where foreign keys (countryCode and sex) already exist

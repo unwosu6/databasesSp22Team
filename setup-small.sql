@@ -24,6 +24,7 @@ CREATE TABLE AnnualCountryStats(
 	population INT,
 	fertRate FLOAT,
 	lifeSatisfaction FLOAT,
+	PRIMARY KEY (countryCode, year),
 	FOREIGN KEY (countryCode) REFERENCES Country(countryCode) ON DELETE CASCADE ON UPDATE CASCADE,
 	CHECK (pctUsingInternet >= 0 AND pctUsingInternet <= 100)
 );
