@@ -41,7 +41,7 @@
 	}
 
 	if ($stmt = $conn->prepare(
-		"SELECT year, CAST(avg(".$factor.") AS DECIMAL(5, 2)) AS average 
+		"SELECT year, avg(".$factor.") AS average 
         FROM AnnualCountryStats 
         WHERE lifeSatisfaction > ? 
         GROUP BY year;"
