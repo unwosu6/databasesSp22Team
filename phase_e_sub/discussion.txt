@@ -10,7 +10,7 @@ None of the process was adjusted from Phase C
 Successes
 1. We really like the implementation of the dynamic dropdowns in the menu, which collects the options from the database. 
 2. Many of our queries were made far more broader than their original scope, by allowing the user to select exactly what factors they want the question to be about. Questions that initially only compared populations and fertility rate acorss continents/years, for example, can compare a lot more factors now. This was also aided by the dynamic dropdowns above.
-3. The initial data processing wa//   
+3. The initial data processing took a while and there were some weird things going on with the formating of the source. 
 
 Known Issues
 There are a lot of countries with no data (set as null). This doesn't cause any errors, but it does result in a lot of messages about not having data. 
