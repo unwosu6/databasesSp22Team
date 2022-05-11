@@ -141,13 +141,15 @@
 			include 'open.php';
 			echo "COUNTRY:"; 
 			echo "<select name=\"country\">";
-			//populate value using php
-			$query = "SELECT * FROM Country;";
-			$results = mysqli_query($conn, $query);
-			//loop
-			foreach ($results as $country){
-				echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
+			//populate value using prepared statement
+			if ($results = $conn->query("CALL GetCountries();")) {
+				if ($results->num_rows > 0) {
+					foreach ($results as $country){
+						echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
+					}
+				}
 			}
+			
 			echo "</select><br/>";
 			$conn->close();
 		?>
@@ -157,7 +159,7 @@
 		<select name="sex">  
 			<option value="Female">Females</option>
 			<option value="Male">Males</option>   
-		</select>
+		</select><br/>
 		<input type="submit">
 	</form>
 	<br/><br/>
@@ -177,12 +179,13 @@
 			include 'open.php';
 			echo "COUNTRY:"; 
 			echo "<select name=\"country\">";
-			//populate value using php
-			$query = "SELECT * FROM Country;";
-			$results = mysqli_query($conn, $query);
-			//loop
-			foreach ($results as $country){
-				echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
+			//populate dropdown using stored procedure
+			if ($results = $conn->query("CALL GetCountries();")) {
+				if ($results->num_rows > 0) {
+					foreach ($results as $country){
+						echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
+					}
+				}
 			}
 			echo "</select><br/>";
 			$conn->close();
