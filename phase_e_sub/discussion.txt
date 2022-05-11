@@ -1,0 +1,21 @@
+Joanna Bi jbi9
+Udochukwu Nwosu unwosu6
+
+Modifications
+Since phase A, no major changes were made to the domain. We did shift away some focus on depression/mental health and focused most of our attention on "life satisfaction" as our main metric. As a result, we replaced a lot of the questions with life satisfaction.  We also found a lot of annual data, so many of our questions included a year option. Though a lot of the questiosn got replaced, their structure and focus stayed mostly the same. 
+
+Process
+None of the process was adjusted from Phase C
+
+Successes
+1. We really like the implementation of the dynamic dropdowns in the menu, which collects the options from the database. 
+2. Many of our queries were made far more broader than their original scope, by allowing the user to select exactly what factors they want the question to be about. Questions that initially only compared populations and fertility rate acorss continents/years, for example, can compare a lot more factors now. This was also aided by the dynamic dropdowns above.
+3. The initial data processing wa//   
+
+Known Issues
+lots of null things
+
+Extensions
+updated dynamic dropdowns, restricts as you select
+find more data (less null values)
+Interactive visual way to see world map and click countries for the queiries. 
