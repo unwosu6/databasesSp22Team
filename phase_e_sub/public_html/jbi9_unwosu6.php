@@ -405,13 +405,13 @@
 		<?php
 			include 'open.php';
 			echo "Country: "; 
-			//populate dropdown using stored procedure
-			if ($results = $conn->query("CALL GetCountries();")) {
-				if ($results->num_rows > 0) {
-					foreach ($results as $country){
-						echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
-					}
-				}
+			echo "<select name=\"country\">";
+			//populate value using php
+			$query = "SELECT * FROM Country;";
+			$results = mysqli_query($conn, $query);
+			//loop
+			foreach ($results as $country){
+				echo "<option value=\"".$country['countryCode']."\">".$country['countryName']."</option>";
 			}
 			echo "</select><br/>";
 			$conn->close();
