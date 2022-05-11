@@ -46,7 +46,7 @@
 	</form>
 
 	<!-- (5/6) -->
-	<h2> How many countries from each continent have a [DIRECTION: LOWER/HIGHER] life satisfaction than [COUNTRY] in [YEAR]? (Visual)</h2>
+	<h2> How many countries from each contient have a [DIRECTION: LOWER/HIGHER] life satisfaction than [COUNTRY] in [YEAR]? (Visual)</h2>
 	<h3> (Life satisfaction is measured on a scale from 0 to 10)</h3>
 	<form action="Q56.php" method="post">
 		DIRECTION:
