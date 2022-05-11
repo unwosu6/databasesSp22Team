@@ -23,12 +23,12 @@
     } 
 
 	// echo some basic header info onto the page
-	echo "<h2>In ".$year.", how many countries are in both the top 50 for ".$factorWord." and GDP per capita?</h2><br>";
+	echo "<h2>In ".$year.", what countries are in both the top 50 for ".$factorWord." and GDP per capita?</h2><br>";
 
 	function displayItems($res) {
 		global $factorWord, $year;
 		if ($res->num_rows == 0) {
-			echo "There were no records found for the year ".$year.".";
+			echo "There were no countries that were both the top 50 for ".$factorWord." and GDP per capita in the year ".$year.".";
 		} else {
 			echo "<table border=\"1px solid black\">";
 			echo "<tr><th> Country Name </th> <th> ".$factorWord." </th> ";

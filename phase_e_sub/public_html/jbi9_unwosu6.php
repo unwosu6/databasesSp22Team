@@ -196,7 +196,7 @@
 	<br/><br/>
 
 	<!-- (13) -->
-	<h2> In [YEAR], how many countries (list them) are in both the top 50 for [FACTOR] and GDP per capita?</h2>
+	<h2> In [YEAR], what countries were in both the top 50 for [FACTOR] and GDP per capita?</h2>
 	<form action="Q13.php" method="post">
 		YEAR: <input type="number" name="year"> <br/>
 		FACTOR:

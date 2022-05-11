@@ -19,7 +19,7 @@
 		} else {
 			echo "<table border=\"1px solid black\">";
 			echo "<tr><th> Country Name </th> <th> Job Sector </th> ";
-			echo "<th> Monthly Earnings </th>";
+			echo "<th> Monthly Earnings (in USD) </th>";
 			while (null !== ($row = $res->fetch_assoc())) {
 				echo "<tr>";
 				echo "<td>".$row['countryName']."</td>";

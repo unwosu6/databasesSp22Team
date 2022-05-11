@@ -24,7 +24,7 @@
 			echo "There are no records for monthly earnings in ".$countryName." in either the year ".$start." or ".$end.".";
 		} else {
 			echo "<table border=\"1px solid black\">";
-			echo "<tr><th> Job Sector </th> <th> Growth </th> ";
+			echo "<tr><th> Job Sector </th> <th> Growth (in USD) </th> ";
 			while (null !== ($row = $res->fetch_assoc())) {
 				echo "<tr>";
 				echo "<td>".$row['sectorID']."</td>";
