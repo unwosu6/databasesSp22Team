@@ -13,9 +13,9 @@ Successes
 3. The initial data processing wa//   
 
 Known Issues
-lots of null things
+There are a lot of countries with no data (set as null). This doesn't cause any errors, but it does result in a lot of messages about not having data. 
 
 Extensions
-updated dynamic dropdowns, restricts as you select
-find more data (less null values)
-Interactive visual way to see world map and click countries for the queiries. 
+1. Find more data, to address the issue mentioned above. 
+2. Have a way to update the options for the query, so that when an option is selected from a dropdown, options for the other blanks get updated and restricted to only available options. 
+3. Make an interactive visual of the world map that you can click/roll over to see the results
